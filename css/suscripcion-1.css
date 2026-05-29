@@ -1,0 +1,777 @@
+/* ── BODY OVERRIDE (fondo claro) ── */
+body {
+    background: var(--clr-corporativo-blanco);
+    padding: 2rem 4rem;
+}
+
+/* ── MAIN ── */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem 0 2rem;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+}
+
+/* ── STEPPER ── */
+.stepper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    /* Los elementos como los botones, los inputs, los selects o tu stepper nativo tienen un comportamiento estándar que dice: "Solo voy a ocupar el ancho mínimo necesario para que se vea mi contenido (el número y las flechas)" . Por eso lo pongo: */
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.stepper-linea {
+    position: absolute;
+    top: .6rem;
+    left: 5rem;
+    right: 5rem;
+    height: 1.5px;
+    --clr-corporativo-fondo-dark: hsl(262, 63%, 8%, .1);
+    background: var(--clr-corporativo-fondo-dark);
+    z-index: 0;
+}
+
+.stepper-paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.stepper-circulo {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: var(--clr-corporativo-primario-lila);
+    border: 2px solid hsla(260, 20%, 65%, 0.4);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.stepper-paso-activo .stepper-circulo {
+    background: var(--clr-corporativo-secundario-rosa-medio);
+    border-color: var(--clr-corporativo-secundario-rosa-claro);
+}
+
+.stepper-label {
+    font-size: var(--font-size-label);
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-fondo-dark);
+}
+
+.stepper-paso-activo .stepper-label {
+    color: var(--clr-corporativo-fondo-darker);
+    font-weight: 700;
+}
+
+/* ── WRAP CONTENIDO ── */
+.plan-wrap {
+    width: 100%;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: aparecer 0.6s ease both;
+}
+
+/* ── TÍTULO ── */
+.plan-titulo {
+    font-size: var(--font-size-h2-secundario-esc);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: 2rem;
+}
+
+/* ── PLAN SELECCIONADO ── */
+.plan-seleccionado-label {
+    font-size: var(--font-size-label);
+    font-weight: 400;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: .6rem;
+}
+
+.plan-seleccionado-nombre {
+    font-size: var(--font-size-h3-secundario-esc);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: .6rem;
+}
+
+.plan-modalidad-label {
+    font-size: var(--font-size-parrafo);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario);
+    letter-spacing: .05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ── CARDS MODALIDAD ── */
+.plan-modalidades {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.plan-modalidad {
+    flex: 1;
+    border: 1px solid hsla(260, 20%, 65%, 0.4);
+    border-radius: 16px;
+    background: var(--clr-corporativo-primario-lila);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.plan-modalidad:hover {
+    border-color: var(--clr-corporativo-fondo-darker);
+    box-shadow: 0 4px 24px hsla(260, 30%, 55%, 0.15);
+}
+
+/* ── TIPO ── */
+.plan-modalidad-tipo {
+    font-size: var(--font-size-h3-secundario-esc);
+    font-weight: 900;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: .4rem;
+}
+
+/* ── PRECIOS ── */
+.plan-modalidad-precio {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 700;
+    color: var(--clr-corporativo-primario);
+    letter-spacing: .05rem;
+}
+
+.plan-modalidad-precio-destacado {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-corporativo-primario);
+    letter-spacing: .05rem;
+}
+
+
+
+
+
+/* SUSCRIPCION 2 */
+
+h1 {
+    font-size: var(--font-size-h1-secundario-esc);
+    color: var(--clr-corporativo-fondo-darker);
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+/* ── WRAP CONTENIDO ── */
+.pago-wrap {
+    width: 100%;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    animation: aparecer 0.6s ease both;
+}
+
+/* ── FIELDSET ── */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+legend {
+    font-size: var(--font-size-label);
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-fondo-dark);
+    margin-bottom: 1rem;
+}
+
+/* ── CAMPOS ── */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-bottom: 1rem;
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    font-size: var(--font-size-label);
+    font-weight: 500;
+    letter-spacing: .05rem;
+    color: var(--clr-corporativo-fondo-dark);
+}
+
+.campo .opcional {
+    font-weight: 300;
+    font-size: var(--font-size-label);
+    color: var(--clr-corporativo-fondo-dark);
+    opacity: .6;
+}
+
+.campo input,
+.campo textarea {
+    /* El elemento hereda la fuente de su elemento padre, en lugar de usar la fuente por defecto del navegador. */
+    font-family: inherit;
+    font-size: var(--font-size-parrafo);
+    color: var(--clr-corporativo-fondo-darker);
+    background: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-fondo-dark);
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    width: 100%;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--clr-corporativo-primario-lila);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: var(--clr-corporativo-fondo-dark);
+    opacity: .4;
+}
+
+/* ── FILA DOS COLUMNAS ── */
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* ── MÉTODOS DE PAGO ── */
+.metodos {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.metodo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--clr-corporativo-primario);
+    border-radius: 16px;
+    background: var(--clr-corporativo-primario-lila);
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.metodo:hover {
+    border-color: var(--clr-corporativo-primario);
+    box-shadow: 0 4px 24px hsla(260, 30%, 55%, 0.15);
+}
+
+/* el <label> envuelve al <input type="radio">,
+así toda la tarjeta es clickable. En el CSS tienes dos estados: .metodo con el estilo base y .metodo.activo con el borde rosa, que al principio se la pones manualmente al primero en el HTML con checked. Luego el JS escucha el evento change de cada radio y cuando se dispara hace dos cosas: quita .activo de todos los .metodo y se la añade al que acaba de cambiar usando radio.closest('.metodo'),
+que sube por el DOM desde el <input> hasta encontrar su <label> padre. */
+
+.metodo.activo {
+    border-color: var(--clr-corporativo-secundario-rosa-medio);
+    box-shadow: 0 4px 24px hsla(260, 30%, 55%, 0.15);
+}
+
+.metodo input {
+    accent-color: var(--clr-corporativo-secundario-rosa-medio);
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* selector de hijo directo: */
+
+.metodo>span {
+    font-size: var(--font-size-parrafo);
+    font-weight: 500;
+    color: var(--clr-corporativo-primario);
+    flex: 1;
+    letter-spacing: .05rem;
+}
+
+.logo-pago {
+    height: 1.25rem;
+    width: auto;
+}
+
+/* ── CAMPOS TARJETA ── */
+.campos-tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    --clr-corporativo-primario-lila: hsl(260, 30%, 83%, .3);
+    background: var(--clr-corporativo-primario-lila);
+    border-radius: 12px;
+    margin-top: -.25rem;
+}
+
+.campos-tarjeta .campo {
+    margin-bottom: 0;
+}
+
+/* ── TÉRMINOS ── */
+.terminos {
+    display: flex;
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* El checkbox tiene flex-shrink: 0 para que no se encoja si el texto no es largo,
+margin-top: 2px para alinearlo visualmente con la primera línea del texto (sin ese ajuste quedaría demasiado arriba), y accent-color para cambiar el color nativo del checkbox al rosa corporativo. */
+
+.terminos input {
+    accent-color: var(--clr-corporativo-secundario-rosa-medio);
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.terminos label {
+    font-size: var(--font-size-label);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario);
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.terminos a {
+    color: var(--clr-corporativo-primario);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ── PRECIO RESUMEN ── */
+.precio-resumen {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 700;
+    color: var(--clr-corporativo-primario);
+    letter-spacing: .05rem;
+    margin-bottom: 1rem;
+}
+
+.precio-resumen span {
+    font-weight: 300;
+    font-size: var(--font-size-comentarios);
+    opacity: .7;
+}
+
+/* ── NOTAS DE SEGURIDAD ── */
+.notas-seguridad {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.notas-seguridad p {
+    font-size: var(--font-size-label);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario);
+    opacity: .7;
+    letter-spacing: .03rem;
+}
+
+
+
+
+
+/* SUSCRIPCIÓN 3 */
+
+.conf-wrap {
+    width: 100%;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: aparecer 0.6s ease both;
+}
+
+/* ── TÍTULO ── */
+.conf-titulo {
+    font-size: var(--font-size-h2-secundario-esc);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: 0.9rem;
+    line-height: 1.2;
+}
+
+/* ── SUBTÍTULO ── */
+.conf-subtitulo {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario);
+    letter-spacing: 0.03rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* ── DETALLES DEL PLAN ── */
+.conf-detalles-titulo {
+    font-size: var(--font-size-label);
+    font-weight: 600;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-primario);
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.conf-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    padding: 0;
+}
+
+.conf-lista li {
+    font-size: var(--font-size-parrafo);
+    font-weight: 400;
+    color: var(--clr-corporativo-primario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+
+.det-label {
+    font-weight: 700;
+    color: var(--clr-corporativo-primario);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ── NOTA ── */
+.conf-nota {
+    font-size: var(--font-size-comentarios);
+    font-weight: 400;
+    color: var(--clr-corporativo-primario);
+    line-height: 1.7;
+    letter-spacing: 0.02rem;
+}
+
+.conf-nota strong {
+    font-weight: 700;
+    color: var(--clr-corporativo-primario);
+}
+
+.conf-nota a {
+    color: var(--clr-corporativo-primario);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.conf-nota a:hover {
+    color: var(--clr-corporativo-fondo-dark);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+/* RESPONSIVE */
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — Suscripción (páginas 1, 2 y 3)
+   Breakpoints:
+     tablet  : max-width 1024px
+     móvil   : max-width 640px
+   ───────────────────────────────────────────── */
+
+
+/* ══════════════════════════════════════════════
+   TABLET  (≤ 1024px)
+══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+    /* ── BODY ── */
+    body {
+        padding: 1.5rem 2.5rem;
+    }
+
+    /* ── STEPPER ── */
+    .stepper-linea {
+        left: 3.5rem;
+        right: 3.5rem;
+    }
+
+    .stepper-label {
+        font-size: 0.65rem;
+        letter-spacing: .06rem;
+    }
+
+    /* ── WRAPS (páginas 1, 2 y 3) ── */
+    .plan-wrap,
+    .pago-wrap,
+    .conf-wrap {
+        max-width: 65%;
+    }
+
+    /* ── FILA DOS COLUMNAS ── */
+    .fila {
+        grid-template-columns: 1fr 1fr;
+        gap: .75rem;
+    }
+}
+
+
+/* ══════════════════════════════════════════════
+   MÓVIL  (≤ 640px)
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+    /* ── BODY ── */
+    body {
+        padding: 1.25rem 1rem;
+    }
+
+    /* ── MAIN ── */
+    main {
+        padding: 1.5rem 0 0 0;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+        width: 7rem;
+        margin-bottom: .5rem;
+    }
+
+    /* ── STEPPER ── */
+    .stepper {
+        margin-bottom: 2rem;
+    }
+
+    .stepper-linea {
+        left: 2rem;
+        right: 2rem;
+        top: .55rem;
+    }
+
+    .stepper-circulo {
+        width: .875rem;
+        height: .875rem;
+    }
+
+    .stepper-label {
+        font-size: 0.6rem;
+        letter-spacing: .04rem;
+    }
+
+    /* ── WRAPS ── */
+    .plan-wrap,
+    .pago-wrap,
+    .conf-wrap {
+        max-width: 100%;
+        padding: 0;
+    }
+
+
+    /* ────────────────────────────
+       PÁGINA 1 — Selección de plan
+    ──────────────────────────── */
+
+    .plan-titulo {
+        font-size: var(--font-size-h3-secundario-esc);
+        letter-spacing: .2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .plan-seleccionado-nombre {
+        font-size: var(--font-size-parrafo-esc);
+    }
+
+    /* Las tarjetas de modalidad pasan a columna única */
+    .plan-modalidades {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .plan-modalidad {
+        padding: 1.5rem 1.25rem;
+        border-radius: 12px;
+    }
+
+    .plan-modalidad-tipo {
+        font-size: var(--font-size-parrafo-esc);
+    }
+
+    .plan-modalidad-precio {
+        font-size: var(--font-size-parrafo);
+    }
+
+
+    /* ────────────────────────────
+       PÁGINA 2 — Datos de pago
+    ──────────────────────────── */
+
+    h1 {
+        font-size: var(--font-size-h1-secundario-mobile);
+        margin-bottom: 1.25rem;
+    }
+
+    fieldset {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Fila de dos columnas → una sola columna */
+    .fila {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Campos */
+    .campo input,
+    .campo textarea {
+        padding: .65rem .875rem;
+        border-radius: 10px;
+        font-size: var(--font-size-comentarios);
+    }
+
+    /* Métodos de pago */
+    .metodo {
+        padding: .875rem 1rem;
+        border-radius: 12px;
+        gap: .75rem;
+    }
+
+    .metodo>span {
+        font-size: var(--font-size-comentarios);
+    }
+
+    .logo-pago {
+        height: 1rem;
+    }
+
+    /* Campos tarjeta */
+    .campos-tarjeta {
+        padding: 1rem;
+        gap: .75rem;
+        border-radius: 10px;
+    }
+
+    /* Términos */
+    .terminos {
+        gap: .6rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Precio resumen */
+    .precio-resumen {
+        font-size: var(--font-size-parrafo);
+    }
+
+
+    /* ────────────────────────────
+       PÁGINA 3 — Confirmación
+    ──────────────────────────── */
+
+    .conf-titulo {
+        font-size: var(--font-size-h3-secundario-esc);
+        letter-spacing: .15rem;
+        margin-bottom: .75rem;
+    }
+
+    .conf-subtitulo {
+        font-size: var(--font-size-parrafo);
+        margin-bottom: 1.5rem;
+    }
+
+    .conf-lista {
+        gap: .45rem;
+        margin-bottom: 2rem;
+    }
+
+    .conf-lista li {
+        font-size: var(--font-size-comentarios);
+    }
+
+    .conf-nota {
+        font-size: var(--font-size-label);
+        line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+        margin-top: 4rem;
+    }
+}
+
+
+/* ══════════════════════════════════════════════
+   MÓVIL PEQUEÑO  (≤ 380px)
+   Ajustes extra para pantallas muy estrechas
+══════════════════════════════════════════════ */
+@media (max-width: 380px) {
+
+    body {
+        padding: 1rem .75rem;
+    }
+
+    .stepper-label {
+        display: none;
+    }
+
+    .plan-modalidad {
+        padding: 1.25rem 1rem;
+    }
+
+    .metodo {
+        flex-wrap: wrap;
+    }
+
+    .logo-pago {
+        order: -1;
+    }
+}
