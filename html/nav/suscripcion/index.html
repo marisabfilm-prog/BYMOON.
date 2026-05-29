@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elige Modalidad — Inicia sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../../css/utility-clases_variables.css" />
+    <link rel="stylesheet" href="../../../css/estrellas.css" />
+    <link rel="stylesheet" href="../../../css/suscripcion-1.css" />
+    <link rel="stylesheet" href="../../../css/botones.css" />
+
+</head>
+
+<body>
+
+    <header > <a href="../../../index.html"> <img
+                class="logo" src="../../../svg/logo-bymoon-morado.svg" alt="bymoon." /> </a>
+    </header>
+
+    <main>
+
+        <!-- STEPPER -->
+        <div class="stepper">
+            <!-- un stepper es un elemento de diseño de interfaz (en este caso: Una barra de progreso que divide un proceso largo en pasos) -->
+            <div class="stepper-linea"></div>
+            <div class="stepper-paso stepper-paso-activo">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Elegir plan</span>
+            </div>
+            <div class="stepper-paso">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Pago</span>
+            </div>
+            <div class="stepper-paso">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Confirmación</span>
+            </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="plan-wrap">
+
+            <h1 class="plan-titulo">Elige tu plan</h1>
+
+            <p class="plan-seleccionado-label">Has seleccionado:</p>
+            <p class="plan-seleccionado-nombre">Plan Luna Llena</p>
+            <p class="plan-modalidad-label">Escoge una modalidad:</p>
+
+            <!-- CARDS MODALIDAD -->
+            <section class="plan-modalidades">
+
+                <article class="plan-modalidad">
+                    <h2 class="plan-modalidad-tipo">Mensual</h2>
+                    <p class="plan-modalidad-precio">19,99 € / mes</p>
+                    <a href="suscripcion-2.html">
+                    <button class="plan-modalidad-btn plan-modalidad-btn-activo">Seleccionar</button>
+                    </a>
+                </article>
+
+                <article class="plan-modalidad">
+                    <h2 class="plan-modalidad-tipo">Anual</h2>
+                    <p class="plan-modalidad-precio-destacado">14,99 € / mes</p>
+                    <a href="suscripcion-2.html">
+                    <button class="plan-modalidad-btn">Seleccionar</button>
+                    </a>
+                </article>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© BYMOON 2026</p>
+    </footer>
+
+
+</body>
+
+</html>

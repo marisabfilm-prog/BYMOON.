@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Perfil | BYMOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../../css/utility-clases_variables.css" />
+    <link rel="stylesheet" href="../../../css/estrellas.css" />
+    <link rel="stylesheet" href="../../../css/botones.css" />
+    <link rel="stylesheet" href="../../../css/footer-nav.css" />
+    <link rel="stylesheet" href="../../../css/perfil.css" />
+
+</head>
+
+<body>
+
+
+    <main class="main-editar-perfil">
+
+        <div class="estrellas-1"></div>
+        <div class="estrellas-2"></div>
+        <div class="estrellas-3"></div>
+        <a href="index.html" class="btn-volver">← Volver al perfil</a>
+
+        <section class="perfil-header-edit">
+            <div class="perfil-avatar-wrap">
+                <img src="../../../jpg/categoria-4.jpg" alt="Tu foto de perfil" class="avatar-img" />
+                <div class="icon-edit-overlay" title="Cambiar foto de perfil">📷</div>
+            </div>
+
+            <div class="nombre-edit-wrap">
+                <h1 class="perfil-nombre">@tunombre</h1>
+                <span class="icon-edit-inline" title="Editar nombre de usuario">✏️</span>
+            </div>
+
+            <div class="bio-edit-wrap">
+                <p class="perfil-bio">Donde el ruido del mundo se apaga...</p>
+                <span class="icon-edit-inline" title="Editar biografía">✏️</span>
+            </div>
+        </section>
+
+        <form class="form-editar-perfil" action="#" method="POST" onsubmit="return false;">
+            <div class="input-group">
+                <input type="email" id="edit-email" name="email" placeholder="Cambiar correo electrónico" class="input-edit"
+                    autocomplete="email">
+            </div>
+        
+            <div class="input-group">
+                <input type="password" id="edit-password" name="password" placeholder="Nueva contraseña" class="input-edit"
+                    autocomplete="new-password">
+            </div>
+        
+            <button type="submit" class="btn-guardar-cambios">Guardar cambios</button>
+        </form>
+    </main>
+
+
+    <script src="../../../js/nav.js"></script>
+    <script src="../../../js/utils/main.js"></script>
+</body>
+
+</html>

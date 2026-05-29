@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pago | BYMOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../../../css/utility-clases_variables.css" />
+    <link rel="stylesheet" href="../../../css/estrellas.css" />
+    <link rel="stylesheet" href="../../../css/suscripcion-1.css" />
+    <link rel="stylesheet" href="../../../css/botones.css" />
+</head>
+
+<body>
+
+    <header>
+        <a href="../../../index.html">
+            <img class="logo" src="../../../svg/logo-bymoon-morado.svg" alt="bymoon." />
+        </a>
+    </header>
+
+    <main>
+
+        <!-- STEPPER -->
+        <div class="stepper">
+            <!-- un stepper es un elemento de diseño de interfaz (en este caso: Una barra de progreso que divide un proceso largo en pasos) -->
+            <div class="stepper-linea"></div>
+            <div class="stepper-paso">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Elegir plan</span>
+            </div>
+            <div class="stepper-paso stepper-paso-activo">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Pago</span>
+            </div>
+            <div class="stepper-paso">
+                <div class="stepper-circulo"></div>
+                <span class="stepper-label">Confirmación</span>
+            </div>
+        </div>
+
+        <h1>Pago</h1>
+
+        <form class="pago-wrap">
+
+            <fieldset>
+                <legend>Datos de envío</legend>
+
+                <div class="fila">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                            autocomplete="given-name" />
+                    </div>
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos"
+                            autocomplete="family-name" />
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Calle, número, piso…"
+                        autocomplete="street-address" />
+                </div>
+
+                <div class="fila">
+                    <div class="campo">
+                        <label for="cp">Código postal</label>
+                        <input type="text" id="cp" name="cp" placeholder="28001" inputmode="numeric" maxlength="5" />
+                    </div>
+                    <div class="campo">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Madrid" />
+                    </div>
+                </div>
+
+                <div class="fila">
+                    <div class="campo">
+                        <label for="provincia">Provincia</label>
+                        <input type="text" id="provincia" name="provincia" placeholder="Madrid" />
+                    </div>
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000"
+                            autocomplete="tel" />
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="info-adicional">Notas adicionales <span class="opcional">(opcional)</span></label>
+                    <textarea id="info-adicional" name="info-adicional"
+                        placeholder="Instrucciones especiales…"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Método de pago</legend>
+
+                <div class="metodos">
+
+                    <label class="metodo activo">
+                        <input type="radio" name="metodo-pago" value="tarjeta" checked />
+                        <span>Tarjeta</span>
+                        <img src="../../../svg/Visa_Inc._logo_(2021–present).svg" alt="Visa" class="logo-pago" />
+                        <img src="../../../svg/Mastercard_2019_logo.svg" alt="Mastercard" class="logo-pago" />
+                    </label>
+
+                    <div class="campos-tarjeta" id="campos-tarjeta">
+                        <div class="campo">
+                            <label for="num-tarjeta">Número de tarjeta</label>
+                            <input type="text" id="num-tarjeta" placeholder="0000 0000 0000 0000" inputmode="numeric"
+                                maxlength="19" autocomplete="cc-number" />
+                        </div>
+                        <div class="fila">
+                            <div class="campo">
+                                <label for="caducidad">Caducidad</label>
+                                <input type="text" id="caducidad" placeholder="MM / AA" inputmode="numeric"
+                                    maxlength="7" autocomplete="cc-exp" />
+                            </div>
+                            <div class="campo">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="•••" inputmode="numeric" maxlength="4"
+                                    autocomplete="cc-csc" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="metodo">
+                        <input type="radio" name="metodo-pago" value="bizum" />
+                        <span>Bizum</span>
+                        <img src="../../../svg/Bizum.svg" alt="Bizum" class="logo-pago" />
+                    </label>
+
+                    <label class="metodo">
+                        <input type="radio" name="metodo-pago" value="paypal" />
+                        <span>PayPal</span>
+                        <img src="../../../svg/PayPal_2024_(Icon).svg" alt="PayPal" class="logo-pago" />
+                    </label>
+
+                </div>
+            </fieldset>
+
+            <div class="terminos">
+                <input type="checkbox" id="terminos" />
+                <label for="terminos">
+                    Al continuar aceptas los <a href="#">Términos de Servicio</a> y la <a href="#">Política de
+                        Privacidad</a>.
+                </label>
+            </div>
+
+            <p class="precio-resumen">19,99 € / mes <span>· Cancela cuando quieras</span></p>
+
+            <a href="suscripcion-3.html">
+
+                <!-- He cambiado el type="submit" a type="button" porque el botón está dentro de <form class="pago-wrap">, y al tener type="submit" enviaba el formulario y recargaba la página en lugar de navegar a suscripcion-3. -->
+                <button class="btn-pagar" type="button">Pagar y continuar</button>
+            </a>
+
+            <div class="notas-seguridad">
+                <p>Pago seguro encriptado.</p>
+                <p>No guardamos los datos de tu tarjeta.</p>
+                <p>Se te cobrarán 19,99€ cada mes. Cancela cuando quieras.</p>
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>© BYMOON 2026</p>
+    </footer>
+
+    <script src="../../../js/suscripcion-2.js"></script>
+</body>
+
+</html>

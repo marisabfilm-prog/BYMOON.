@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil | BYMOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../../css/utility-clases_variables.css" />
+    <link rel="stylesheet" href="../../../css/estrellas.css" />
+    <link rel="stylesheet" href="../../../css/botones.css" />
+    <link rel="stylesheet" href="../../../css/footer-nav.css" />
+    <link rel="stylesheet" href="../../../css/perfil.css" />
+</head>
+
+<body>
+
+    <main>
+
+        <div class="estrellas-1"></div>
+        <div class="estrellas-2"></div>
+        <div class="estrellas-3"></div>
+
+        <!-- AVATAR + PERFIL -->
+        <div class="perfil-avatar-wrap">
+            <img src="../../../jpg/categoria-1.jpg" alt="">
+        </div>
+
+        <h1 class="perfil-nombre">@porsinovuelves</h1>
+
+        <dl class="perfil-stats">
+            <div class="stat">
+                <dt>Seguidores</dt>
+                <dd>1.456</dd>
+            </div>
+            <div class="stat">
+                <dt>Siguiendo</dt>
+                <dd>1.456</dd>
+            </div>
+        </dl>
+        <a href="editar-perfil.html">
+            <button class="btn-editar">Editar perfil</button>
+        </a>
+        <p class="perfil-bio">
+            Tengo un corazón que por el día duerme,<br>
+            por las noches sueña, y cuando precisa, late.
+        </p>
+        <p class="perfil-fecha">Se unió el 27 de diciembre de 2025</p>
+
+        <!-- ACTIVIDAD + PEDIDO -->
+        <div class="grid-dos-cols">
+
+            <section>
+                <h2 class="seccion-titulo">Mi actividad nocturna</h2>
+                <div class="card-dark">
+                    <span class="badge-premium">Premium</span>
+                    <div class="actividad-inner">
+                        <div class="actividad-ring"></div>
+                    </div>
+                    <a href="mi-actividad-nocturna.html">
+                        <button class="btn-saber-mas">Saber más</button>
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="seccion-titulo">Mi pedido</h2>
+                <div class="card-dark pedido-inner">
+                    <div class="pedido-izq">
+                        <span class="pedido-entrega-label">Entrega Lunar 1:</span>
+                        <strong class="pedido-titulo">"Luna de Luz"</strong>
+                        <dl class="pedido-datos">
+                            <dt>Estado del pedido</dt>
+                            <dd>En camino</dd>
+                            <dt>Estimación de entrega</dt>
+                            <dd>1–3 julio</dd>
+                            <dt>Número de seguimiento</dt>
+                            <dd><button class="pedido-seguimiento">#BYM202608</button></dd>
+                        </dl>
+                    </div>
+                    <div class="pedido-der">
+                        <span class="pedido-incluye-label">Incluye…</span>
+                        <ul>
+                            <li>Libro "Luna de Luz"</li>
+                            <li>Antifaz</li>
+                            <li>Vela aromática</li>
+                            <li>"Diario del Sueño"</li>
+                            <li>Infusión</li>
+                        </ul>
+                        <address>Calle de la Luna, 15, 2ºB</address>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- MI FASE ACTUAL -->
+        <section>
+            <div class="card-dark">
+                <h2 class="fase-label">Mi fase actual</h2>
+                <p class="plan-nombre">Plan Luna Nueva</p>
+
+                <div class="luna-fase-wrap">
+                    <svg class="luna-fase" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="70" cy="70" r="65" stroke="hsla(268,33%,78%,0.3)" stroke-width="1" />
+                        <circle cx="70" cy="70" r="52" fill="hsl(265,83%,5%)" />
+                        <circle cx="70" cy="70" r="52" fill="url(#luna-grad)" opacity="0.4" />
+                        <circle cx="70" cy="70" r="52" stroke="hsla(268,33%,78%,0.2)" stroke-width="0.5" />
+                        <ellipse cx="82" cy="58" rx="12" ry="8" fill="hsla(268,33%,78%,0.06)"
+                            transform="rotate(-20 82 58)" />
+                        <defs>
+                            <radialGradient id="luna-grad" cx="60%" cy="40%" r="60%">
+                                <stop offset="0%" stop-color="hsl(260,30%,30%)" />
+                                <stop offset="100%" stop-color="hsl(265,83%,5%)" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <ul class="plan-beneficios">
+                    <li>Técnicas de conciliación básicas.</li>
+                    <li>Selección de lecturas lentas.</li>
+                    <li>Sonidos de ambiente y paisajes sonoros seleccionados.</li>
+                    <li class="bloqueado">Acceso limitado a IA Céfiro.</li>
+                </ul>
+                <a href="../inicio-registro/bienvenido-planes.html">
+                    <button class="btn-mejorar">Mejorar plan</button>
+                </a>
+                <button class="btn-cancelar">Cancelar mi suscripción.</button>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section>
+            <h2 class="seccion-titulo">Newsletter</h2>
+            <div class="card-dark">
+                <ul class="newsletter-grid">
+                    <li class="newsletter-card">
+                        <div class="newsletter-card-header">
+                            <span class="newsletter-cta-badge">Descúbrela</span>
+                            <img src="../../../jpg/newsletter-1.jpg" alt="Newsletter 1" class="newsletter-card-img" />
+                        </div>
+                    </li>
+                    <li class="newsletter-card">
+                        <div class="newsletter-card-header">
+                            <span class="newsletter-cta-badge">Descúbrela</span>
+                            <img src="../../../jpg/newsletter-1.jpg" alt="Newsletter 2" class="newsletter-card-img" />
+                        </div>
+                    </li>
+                    <li class="newsletter-card">
+                        <div class="newsletter-card-header">
+                            <span class="newsletter-cta-badge">Descúbrela</span>
+                            <img src="../../../jpg/newsletter-1.jpg" alt="Newsletter 3" class="newsletter-card-img" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script src="../../../js/nav.js"></script>
+    <script src="../../../js/utils/main.js"></script>
+</body>
+
+</html>

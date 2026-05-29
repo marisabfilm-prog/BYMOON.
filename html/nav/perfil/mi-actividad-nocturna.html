@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi actividad nocturna | BYMOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../../../css/utility-clases_variables.css" />
+    <link rel="stylesheet" href="../../../css/estrellas.css" />
+    <link rel="stylesheet" href="../../../css/botones.css" />
+    <link rel="stylesheet" href="../../../css/footer-nav.css" />
+    <link rel="stylesheet" href="../../../css/perfil.css" />
+</head>
+
+<body>
+
+
+    <main>
+
+        <div class="estrellas-1"></div>
+        <div class="estrellas-2"></div>
+        <div class="estrellas-3"></div>
+
+        <!-- AVATAR + PERFIL -->
+        <div class="perfil-avatar-wrap">
+            <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="30" cy="20" rx="13" ry="15" fill="hsl(294,33%,35%)" opacity="0.8" />
+                <ellipse cx="30" cy="55" rx="20" ry="18" fill="hsl(262,63%,18%)" opacity="0.9" />
+                <ellipse cx="30" cy="52" rx="14" ry="12" fill="hsl(294,33%,28%)" opacity="0.7" />
+                <path d="M17 38 Q10 60 5 75" stroke="hsl(294,33%,30%)" stroke-width="8" stroke-linecap="round"
+                    opacity="0.6" />
+                <path d="M43 38 Q50 60 55 75" stroke="hsl(294,33%,30%)" stroke-width="8" stroke-linecap="round"
+                    opacity="0.6" />
+            </svg>
+        </div>
+
+        <h1 class="perfil-nombre">@porsinovuelves</h1>
+
+        <dl class="perfil-stats">
+            <div class="stat">
+                <dt>Seguidores</dt>
+                <dd>1.456</dd>
+            </div>
+            <div class="stat">
+                <dt>Siguiendo</dt>
+                <dd>1.456</dd>
+            </div>
+        </dl>
+
+        <a href="editar-perfil.html">
+            <button class="btn-editar">Editar perfil</button>
+        </a>
+
+        <p class="perfil-bio">
+            Tengo un corazón que por el día duerme,<br>
+            por las noches sueña, y cuando precisa, late.
+        </p>
+        <p class="perfil-fecha">Se unió el 27 de diciembre de 2025</p>
+
+
+        <!-- ACTIVIDAD NOCTURNA -->
+        <h2 class="seccion-titulo">Mi actividad nocturna</h2>
+
+
+
+        <div class="grafico-row">
+            <div class="grafico-visual">
+                <div class="anillo-actividad">
+                    <span class="dato-izq">75%</span>
+                    <span class="dato-der">25%</span>
+                </div>
+            </div>
+            <div class="grafico-leyenda">
+                <div class="grafico-interpretacion">
+                    <p class="grafico-interpretacion-texto">
+                        Este mes has guardado más de lo que has comentado. Eso significa que estás
+                        absorbiendo mucho, pero quizás guardándotelo todo para ti.
+                        <span class="grafico-hint">¿Y si sueltas algo esta semana?</span>
+                    </p>
+                </div>
+                <div class="leyenda-item">
+                    <span class="cuadrito rosa-claro"></span>
+                    <span class="leyenda-txt">GUARDADOS</span>
+                </div>
+                <div class="leyenda-item">
+                    <span class="cuadrito lila-oscuro"></span>
+                    <span class="leyenda-txt">COMENTADO</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-dark card-actividad-detallada">
+            <div class="sentimiento-container">
+                <p class="pregunta-sentimiento">¿CÓMO TE SIENTES HOY?</p>
+                <div class="sentimiento-iconos">
+                    <button class="btn-emoji" title="Súper Triste">
+                        <img class="emoji" src="../../../svg/super-triste.svg" alt="bymoon." />
+                    </button>
+                    <button class="btn-emoji" title="Triste">
+                        <img class="emoji" src="../../../svg/triste.svg" alt="bymoon." />
+                    </button>
+                    <button class="btn-emoji" title="Neutro">
+                        <img class="emoji" src="../../../svg/neutro.svg" alt="bymoon." />
+                    </button>
+                    <button class="btn-emoji" title="Contento">
+                        <img class="emoji" src="../../../svg/contento.svg" alt="bymoon." />
+                    </button>
+                    <button class="btn-emoji" title="Súper Contento">
+                        <img class="emoji" src="../../../svg/super-contento.svg" alt="bymoon." />
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs-perfil">
+            <button class="tab-btn active" id="btn-hilos" onclick="cambiarTab('hilos')">
+                Mis hilos<br>y comentarios
+            </button>
+            <button class="tab-btn" id="btn-guardados" onclick="cambiarTab('guardados')">
+                Mis guardados
+            </button>
+        </div>
+
+        <p class="info-auxiliar" id="info-tab">Aquí encontrarás los hilos y comentarios creados por ti</p>
+
+        <!-- GRID HILOS -->
+        <div id="grid-contenido" class="grid-hilos">
+            <div class="hilo-card hilo-propio" style="background-image: url('../../../jpg/hilo1.jpg');">
+                <div class="hilo-overlay">
+                    <p>La luna sabe de mis secretos</p>
+                </div>
+            </div>
+            <div class="hilo-card hilo-ajeno">
+                <p class="hilo-autor">HILO de @porsinovuelves</p>
+                <p class="hilo-cita">Dormir es el arte de soltar todo lo que no puedes controlar hasta mañana.</p>
+            </div>
+            <div class="hilo-card hilo-propio" style="background-image: url('../../../jpg/hilo2.jpg');">
+                <div class="hilo-overlay">
+                    <p>Lo que pasa si no te duermes</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../../../js/mi-actividad-nocturna.js"></script>
+    <script src="../../../js/nav.js"></script>
+    <script src="../../../js/utils/main.js"></script>
+</body>
+
+</html>
