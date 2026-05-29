@@ -1,0 +1,23 @@
+<svg
+          class="agua-hero w-full"
+          viewBox="0 0 1512 741"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path opacity="0.5" d="M1512 0H0V361H1512V0Z" fill="#D39AC5" />
+          <rect width="1512" height="741" fill="url(#paint0_linear_301_6)" />
+          <defs>
+            <linearGradient
+              id="paint0_linear_301_6"
+              x1="756"
+              y1="0"
+              x2="756"
+              y2="741"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.134615" stop-color="#825690" stop-opacity="0" />
+              <stop offset="0.485577" stop-color="#9068A1" />
+              <stop offset="0.822115" stop-color="#825690" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>

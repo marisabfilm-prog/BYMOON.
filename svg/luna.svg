@@ -1,0 +1,53 @@
+<svg
+          class="luna-hero w-full"
+          viewBox="0 0 744 745"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.2" filter="url(#filter0_d_272_102)">
+            <path
+              d="M371.88 648.38C524.034 648.38 647.38 524.811 647.38 372.38C647.38 219.949 524.034 96.38 371.88 96.38C219.726 96.38 96.38 219.949 96.38 372.38C96.38 524.811 219.726 648.38 371.88 648.38Z"
+              fill="#CBBDDE"
+            />
+          </g>
+          <path
+            d="M372.38 584.38C491.121 584.38 587.38 488.345 587.38 369.88C587.38 251.415 491.121 155.38 372.38 155.38C253.639 155.38 157.38 251.415 157.38 369.88C157.38 488.345 253.639 584.38 372.38 584.38Z"
+            fill="#F8D3BA"
+          />
+          <defs>
+            <filter
+              id="filter0_d_272_102"
+              x="7.62939e-06"
+              y="7.62939e-06"
+              width="743.76"
+              height="744.76"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="48.19" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_272_102"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_272_102"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
