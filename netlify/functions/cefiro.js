@@ -34,7 +34,8 @@ Nunca interrumpas al usuario ni ofrezcas productos salvo que los pida. Si alguie
         );
 
         const data = await response.json();
-        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "...";
+        console.log("Gemini response:", JSON.stringify(data));
+        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || data.error?.message || "Sin respuesta";
 
         return {
             statusCode: 200,
