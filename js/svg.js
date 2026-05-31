@@ -32,22 +32,32 @@ function animarViento(vientoSvg) {
 
     shapes.forEach((shape) => {
         if (shape.getTotalLength) {
-            const len = shape.getTotalLength();
-            shape.style.strokeDasharray = len;
-            shape.style.strokeDashoffset = len;
-            shape.style.transition = 'none';
+            try {
+                const len = shape.getTotalLength();
+                if (len > 0) {
+                    shape.style.strokeDasharray = len;
+                    shape.style.strokeDashoffset = len;
+                    shape.style.transition = 'none';
+                }
+            } catch (e) {
+                // Safari puede fallar con getTotalLength en ciertos paths
+            }
         }
 
-        const computedFill = getComputedStyle(shape).fill;
-        if (
-            computedFill &&
-            computedFill !== 'none' &&
-            !shape.getAttribute('stroke')
-        ) {
-            shape.dataset.originalFill = computedFill;
-            shape.style.fill = 'transparent';
-            shape.style.stroke = computedFill;
-            shape.style.strokeWidth = '0.2px';
+        try {
+            const computedFill = getComputedStyle(shape).fill;
+            if (
+                computedFill &&
+                computedFill !== 'none' &&
+                !shape.getAttribute('stroke')
+            ) {
+                shape.dataset.originalFill = computedFill;
+                shape.style.fill = 'transparent';
+                shape.style.stroke = computedFill;
+                shape.style.strokeWidth = '0.2px';
+            }
+        } catch (e) {
+            // Safari puede fallar al leer computedStyle en SVGs inline
         }
     });
 
@@ -59,10 +69,12 @@ function animarViento(vientoSvg) {
                     vientoPintado = true;
 
                     shapes.forEach((shape, i) => {
-                        if (shape.getTotalLength) {
-                            shape.style.transition = `stroke-dashoffset 0.6s ease ${i * 0.04}s`;
-                            shape.style.strokeDashoffset = '0';
-                        }
+                        try {
+                            if (shape.getTotalLength && shape.getTotalLength() > 0) {
+                                shape.style.transition = `stroke-dashoffset 0.6s ease ${i * 0.04}s`;
+                                shape.style.strokeDashoffset = '0';
+                            }
+                        } catch (e) { }
 
                         if (shape.dataset.originalFill) {
                             const delay = 600 + i * 40;
