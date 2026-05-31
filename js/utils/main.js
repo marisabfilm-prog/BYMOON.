@@ -104,7 +104,7 @@ function cargarReproductorAudio(raizProyecto) {
             <div class="player-meta">
                 <img src="${raizProyecto}svg/luna.svg" alt="Portada" class="player-thumb">
                 <div class="player-text">
-                    <h4 class="player-title">TÍTULO AUDIO</h4>
+                    <p class="player-title">TÍTULO AUDIO</p>
                     <p class="player-subtitle">Sonidos para un descanso profundo</p>
                 </div>
             </div>
@@ -115,7 +115,7 @@ function cargarReproductorAudio(raizProyecto) {
                 </div>
                 <div class="player-buttons">
                     <button class="btn-prev"><</button>
-                    <button class="btn-play-footer">
+                    <button class="btn-play-footer" aria-label="Reproducir">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     </button>
                     <button class="btn-next">></button>
