@@ -1,15 +1,10 @@
 async function inlineSvg(host) {
     const src = host.dataset.inlineSvg;
-    if (!src) {
-        return null;
-    }
+    if (!src) return null;
 
     try {
         const response = await fetch(src);
-        if (!response.ok) {
-            throw new Error(`No se pudo cargar ${src}`);
-        }
-
+        if (!response.ok) throw new Error(`No se pudo cargar ${src}`);
         host.innerHTML = await response.text();
         return host.querySelector('svg');
     } catch (error) {
@@ -18,84 +13,96 @@ async function inlineSvg(host) {
     }
 }
 
+function getFillColor(svg) {
+    // Intenta leer el fill del <style> interno del SVG
+    const styleEl = svg.querySelector('style');
+    if (styleEl) {
+        const match = styleEl.textContent.match(/fill\s*:\s*([^;]+)/);
+        if (match) return match[1].trim();
+    }
+    // Fallback: lee el atributo fill del primer path
+    const firstPath = svg.querySelector('path, polygon, circle');
+    if (firstPath) {
+        return firstPath.getAttribute('fill') || null;
+    }
+    return null;
+}
+
 function animarViento(vientoSvg) {
-    if (!vientoSvg) {
-        return;
-    }
+    if (!vientoSvg) return;
 
-    const shapes = vientoSvg.querySelectorAll('path, line, polyline');
+    // Pequeño delay para que Safari aplique los estilos del SVG
+    setTimeout(() => {
+        const shapes = vientoSvg.querySelectorAll('path, line, polyline');
+        if (!shapes.length) {
+            console.warn('No se encontraron shapes en el SVG');
+            return;
+        }
 
-    if (!shapes.length) {
-        console.warn('No se encontraron shapes en el SVG');
-        return;
-    }
+        // Leer el color real del SVG antes de tocarlo
+        const fillColor = getFillColor(vientoSvg);
 
-    shapes.forEach((shape) => {
-        if (shape.getTotalLength) {
+        shapes.forEach((shape) => {
             try {
-                const len = shape.getTotalLength();
-                if (len > 0) {
-                    shape.style.strokeDasharray = len;
-                    shape.style.strokeDashoffset = len;
-                    shape.style.transition = 'none';
+                if (shape.getTotalLength) {
+                    const len = shape.getTotalLength();
+                    if (len > 0) {
+                        shape.style.strokeDasharray = len;
+                        shape.style.strokeDashoffset = len;
+                        shape.style.transition = 'none';
+                    }
                 }
-            } catch (e) {
-                // Safari puede fallar con getTotalLength en ciertos paths
-            }
-        }
+            } catch (e) { }
 
-        try {
-            const computedFill = getComputedStyle(shape).fill;
-            if (
-                computedFill &&
-                computedFill !== 'none' &&
-                !shape.getAttribute('stroke')
-            ) {
-                shape.dataset.originalFill = computedFill;
-                shape.style.fill = 'transparent';
-                shape.style.stroke = computedFill;
-                shape.style.strokeWidth = '0.2px';
-            }
-        } catch (e) {
-            // Safari puede fallar al leer computedStyle en SVGs inline
-        }
-    });
+            try {
+                const attrFill = shape.getAttribute('fill');
+                const hasStroke = shape.getAttribute('stroke');
 
-    let vientoPintado = false;
-    const vientoObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && !vientoPintado) {
-                    vientoPintado = true;
+                if (!hasStroke && attrFill !== 'none') {
+                    const colorToUse = attrFill || fillColor || '#c6b6da';
+                    shape.dataset.originalFill = colorToUse;
+                    shape.style.fill = 'transparent';
+                    shape.style.stroke = colorToUse;
+                    shape.style.strokeWidth = '0.2px';
+                }
+            } catch (e) { }
+        });
 
-                    shapes.forEach((shape, i) => {
-                        try {
-                            if (shape.getTotalLength && shape.getTotalLength() > 0) {
-                                shape.style.transition = `stroke-dashoffset 0.6s ease ${i * 0.04}s`;
-                                shape.style.strokeDashoffset = '0';
+        let vientoPintado = false;
+        const vientoObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !vientoPintado) {
+                        vientoPintado = true;
+
+                        shapes.forEach((shape, i) => {
+                            try {
+                                if (shape.getTotalLength && shape.getTotalLength() > 0) {
+                                    shape.style.transition = `stroke-dashoffset 0.6s ease ${i * 0.04}s`;
+                                    shape.style.strokeDashoffset = '0';
+                                }
+                            } catch (e) { }
+
+                            if (shape.dataset.originalFill) {
+                                const delay = 600 + i * 40;
+                                setTimeout(() => {
+                                    shape.style.transition = 'fill 0.3s ease';
+                                    shape.style.fill = shape.dataset.originalFill;
+                                }, delay);
                             }
-                        } catch (e) { }
+                        });
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
-                        if (shape.dataset.originalFill) {
-                            const delay = 600 + i * 40;
-                            setTimeout(() => {
-                                shape.style.transition = 'fill 0.3s ease';
-                                shape.style.fill = shape.dataset.originalFill;
-                            }, delay);
-                        }
-                    });
-                }
-            });
-        },
-        { threshold: 0.1 },
-    );
-
-    vientoObserver.observe(vientoSvg);
+        vientoObserver.observe(vientoSvg);
+    }, 150);
 }
 
 async function inicializarSvgsInline() {
     const hosts = document.querySelectorAll('[data-inline-svg]');
-
     if (!hosts.length) {
         console.warn('No se encontraron SVGs para cargar');
         return;
@@ -103,7 +110,6 @@ async function inicializarSvgsInline() {
 
     for (const host of hosts) {
         const svg = await inlineSvg(host);
-
         if (svg?.classList.contains('viento-oeste')) {
             animarViento(svg);
         }
