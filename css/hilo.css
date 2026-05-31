@@ -1,0 +1,196 @@
+/* ── PÁGINA DE HILO DETALLADO ── */
+
+a {
+    text-decoration: none;
+}
+
+.hilo-titulo {
+    font-size: var(--font-size-h1-secundario-esc);
+    color: var(--clr-corporativo-primario-lila);
+    padding: 4rem 0 3rem 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    text-shadow: 0 0 20px var(--clr-corporativo-primario);
+}
+
+.hilo-titulo span {
+    color: var(--clr-corporativo-secundario-rosa-medio);
+}
+
+.hilo-principal {
+    background: var(--clr-corporativo-fondo-darker);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    margin: 0 2rem 2rem 2rem;
+}
+
+.hilo-autor-info {
+    display: flex;
+    /* los alinea en una misma línea horizontal */
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mini-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--clr-corporativo-lavanda-low);
+    border-radius: 50px;
+}
+
+
+.hilo-texto {
+    font-size: var(--font-size-parrafo-esc);
+    line-height: 1.6;
+    color: var(--clr-corporativo-primario-lila);
+}
+
+
+.hilo-metadatos {
+    margin-top: 1.5rem;
+    font-size: var(--font-size-label);
+    opacity: 0.5;
+    border-bottom: 1px solid rgba(212, 190, 228, 0.1);
+
+    /* padding porque el margin no afecta sobre la línea inferior */
+    padding-bottom: 1rem;
+}
+
+
+.hilo-acciones-principales {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: var(--font-size-comentarios);
+}
+
+/* ── RESPUESTAS Y LÍNEA CONECTORA ── */
+
+.respuestas-hilo {
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* La línea vertical que conecta los comentarios*/
+.linea-conexion {
+    position: absolute;
+    left: 3rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--clr-corporativo-lavanda-low);
+    z-index: 0;
+}
+
+.respuesta-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.respuesta-avatar {
+    width: 2rem;
+    height: 2rem;
+    background: var(--clr-corporativo-fondo-darker);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.respuesta-user {
+    font-size: var(--font-size-comentarios);
+    font-weight: 700;
+    color: var(--clr-corporativo-secundario-rosa-claro);
+    margin-bottom: .5rem;
+}
+
+.respuesta-txt {
+    font-size: var(--font-size-comentarios);
+    line-height: 1.5;
+    color: var(--clr-corporativo-primario-lila);
+}
+
+.respuesta-acciones {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0.4;
+    font-size: var(--font-size-comentarios);
+}
+
+/* ── CAJA DE TEXTO INFERIOR ── */
+
+.escribir-respuesta {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem;
+    border-top: 1px solid var(--clr-corporativo-lavanda-low);
+    border-bottom: 1px solid var(--clr-corporativo-lavanda-low);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+
+.escribir-respuesta input {
+    width: 100%;
+    background: var(--clr-corporativo-fondo-darker);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    outline: none;
+    color: var(--clr-corporativo-primario-lila);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.escribir-respuesta input::placeholder {
+    color: var(--clr-corporativo-lavanda-low);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+
+    .hilo-titulo {
+        font-size: var(--font-size-h1-secundario-mobile);
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        letter-spacing: 0.05rem;
+    }
+
+    .hilo-principal {
+        margin: 0 1rem 1.5rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .hilo-texto {
+        font-size: var(--font-size-parrafo-mobile);
+    }
+
+    .respuestas-hilo {
+        padding-left: 1rem;
+    }
+
+    .linea-conexion {
+        left: 2rem;
+    }
+
+    .respuesta-item {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .escribir-respuesta {
+        padding: 1rem;
+    }
+
+    .escribir-respuesta input {
+        padding: 0.7rem 1rem;
+    }
+}

@@ -1,0 +1,158 @@
+.estrellas-1,
+.estrellas-2,
+.estrellas-3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+/* Capa 1: pequeñas y lentas → parecen lejanas */
+.estrellas-1 {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+        z-index: 0;
+    box-shadow:
+        120vw 80vw 0 hsla(268, 33%, 78%, 0.6),
+        340px 45px 0 hsla(39, 100%, 86%, 0.4),
+        560px 120px 0 hsla(268, 33%, 78%, 0.7),
+        780px 30px 0 hsla(39, 100%, 86%, 0.5),
+        200px 200px 0 hsla(268, 33%, 78%, 0.5),
+        450px 180px 0 hsla(39, 100%, 86%, 0.6),
+        670px 220px 0 hsla(268, 33%, 78%, 0.4),
+        900px 90px 0 hsla(39, 100%, 86%, 0.5),
+        1100px 150px 0 hsla(268, 33%, 78%, 0.6),
+        1300px 60px 0 hsla(39, 100%, 86%, 0.4),
+        80px 320px 0 hsla(268, 33%, 78%, 0.5),
+        290px 380px 0 hsla(39, 100%, 86%, 0.7),
+        510px 340px 0 hsla(268, 33%, 78%, 0.4),
+        730px 400px 0 hsla(39, 100%, 86%, 0.6),
+        950px 360px 0 hsla(268, 33%, 78%, 0.5),
+        1150px 420px 0 hsla(39, 100%, 86%, 0.4),
+        1350px 310px 0 hsla(268, 33%, 78%, 0.6),
+        60px 520px 0 hsla(39, 100%, 86%, 0.5),
+        270px 560px 0 hsla(268, 33%, 78%, 0.7),
+        490px 500px 0 hsla(39, 100%, 86%, 0.4),
+        710px 580px 0 hsla(268, 33%, 78%, 0.6),
+        930px 540px 0 hsla(39, 100%, 86%, 0.5),
+        1130px 610px 0 hsla(268, 33%, 78%, 0.4),
+        1330px 480px 0 hsla(39, 100%, 86%, 0.6),
+        160px 680px 0 hsla(268, 33%, 78%, 0.5),
+        380px 720px 0 hsla(39, 100%, 86%, 0.7),
+        600px 660px 0 hsla(268, 33%, 78%, 0.4),
+        820px 740px 0 hsla(39, 100%, 86%, 0.5),
+        1040px 700px 0 hsla(268, 33%, 78%, 0.6),
+        1240px 780px 0 hsla(39, 100%, 86%, 0.4),
+        40px 840px 0 hsla(268, 33%, 78%, 0.5),
+        260px 900px 0 hsla(39, 100%, 86%, 0.6),
+        480px 860px 0 hsla(268, 33%, 78%, 0.4),
+        700px 920px 0 hsla(39, 100%, 86%, 0.7),
+        920px 880px 0 hsla(268, 33%, 78%, 0.5),
+        1120px 940px 0 hsla(39, 100%, 86%, 0.4),
+        1320px 820px 0 hsla(268, 33%, 78%, 0.6),
+        190px 1020px 0 hsla(39, 100%, 86%, 0.5),
+        410px 1060px 0 hsla(268, 33%, 78%, 0.7),
+        630px 1000px 0 hsla(39, 100%, 86%, 0.4),
+        850px 1080px 0 hsla(268, 33%, 78%, 0.5),
+        1050px 1040px 0 hsla(39, 100%, 86%, 0.6),
+        1250px 1100px 0 hsla(268, 33%, 78%, 0.4);
+    animation: flotar-1 7s ease-in-out infinite;
+}
+
+/* Capa 2: medianas y velocidad media */
+.estrellas-2 {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+        z-index: 0;
+    box-shadow:
+        220px 110px 0 hsla(39, 100%, 86%, 0.7),
+        490px 55px 0 hsla(268, 33%, 78%, 0.8),
+        750px 170px 0 hsla(39, 100%, 86%, 0.5),
+        1010px 80px 0 hsla(268, 33%, 78%, 0.7),
+        170px 290px 0 hsla(39, 100%, 86%, 0.6),
+        440px 330px 0 hsla(268, 33%, 78%, 0.5),
+        700px 270px 0 hsla(39, 100%, 86%, 0.8),
+        960px 350px 0 hsla(268, 33%, 78%, 0.6),
+        1220px 210px 0 hsla(39, 100%, 86%, 0.5),
+        100px 470px 0 hsla(268, 33%, 78%, 0.7),
+        370px 510px 0 hsla(39, 100%, 86%, 0.6),
+        630px 450px 0 hsla(268, 33%, 78%, 0.5),
+        890px 530px 0 hsla(39, 100%, 86%, 0.8),
+        1150px 490px 0 hsla(268, 33%, 78%, 0.6),
+        250px 650px 0 hsla(39, 100%, 86%, 0.5),
+        520px 690px 0 hsla(268, 33%, 78%, 0.7),
+        780px 630px 0 hsla(39, 100%, 86%, 0.6),
+        1040px 710px 0 hsla(268, 33%, 78%, 0.5),
+        1300px 570px 0 hsla(39, 100%, 86%, 0.8),
+        130px 830px 0 hsla(268, 33%, 78%, 0.6),
+        400px 870px 0 hsla(39, 100%, 86%, 0.5),
+        660px 810px 0 hsla(268, 33%, 78%, 0.7),
+        920px 890px 0 hsla(39, 100%, 86%, 0.6),
+        1180px 850px 0 hsla(268, 33%, 78%, 0.5);
+    animation: flotar-2 9s ease-in-out infinite;
+}
+
+/* Capa 3: grandes y rápidas → parecen cercanas */
+.estrellas-3 {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+        z-index: 0;
+    box-shadow:
+        310px 140px 1px hsla(39, 100%, 86%, 0.8),
+        640px 70px 1px hsla(268, 33%, 78%, 0.9),
+        870px 200px 1px hsla(39, 100%, 86%, 0.7),
+        180px 380px 1px hsla(268, 33%, 78%, 0.8),
+        550px 420px 1px hsla(39, 100%, 86%, 0.9),
+        820px 360px 1px hsla(268, 33%, 78%, 0.7),
+        1100px 440px 1px hsla(39, 100%, 86%, 0.8),
+        290px 560px 1px hsla(268, 33%, 78%, 0.9),
+        620px 600px 1px hsla(39, 100%, 86%, 0.7),
+        950px 540px 1px hsla(268, 33%, 78%, 0.8),
+        1230px 620px 1px hsla(39, 100%, 86%, 0.9),
+        120px 740px 1px hsla(268, 33%, 78%, 0.7),
+        460px 780px 1px hsla(39, 100%, 86%, 0.8),
+        790px 720px 1px hsla(268, 33%, 78%, 0.9),
+        1060px 800px 1px hsla(39, 100%, 86%, 0.7);
+    animation: flotar-3 9s ease-in-out infinite;
+}
+
+/* Capa 1: flota arriba y abajo suavemente */
+@keyframes flotar-1 {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    50% {
+        transform: translateY(-15px) translateX(8px);
+    }
+}
+
+/* Capa 2: flota en diagonal opuesta */
+@keyframes flotar-2 {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    50% {
+        transform: translateY(12px) translateX(-10px);
+    }
+}
+
+/* Capa 3: movimiento más pequeño, parece más lejana */
+@keyframes flotar-3 {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    50% {
+        transform: translateY(-8px) translateX(5px);
+    }
+}

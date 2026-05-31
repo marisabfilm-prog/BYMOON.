@@ -1,0 +1,444 @@
+.entrega-banner {
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    z-index: 20;
+}
+
+h1 {
+    font-size: var(--font-size-h1-principal-esc);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+    padding: 3rem 4rem 0 4rem;
+    text-shadow:
+        0 0 30px var(--clr-corporativo-lavanda-low);
+    position: relative;
+    z-index: 20;
+}
+
+h1 span {
+    color: var(--clr-corporativo-secundario-rosa-medio);
+}
+
+.entrega-banner-texto .subtitulo-banner {
+    font-size: var(--font-size-parrafo-subtitulo);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.entrega-banner-texto p {
+    max-width: 50%;
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}
+
+.entrega-banner-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+    text-align: right;
+}
+
+.suscripcion-lateral {
+    font-size: var(--font-size-parrafo);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario-lila);
+    line-height: 1.5;
+}
+
+.planes-link {
+    font-size: var(--font-size-comentarios);
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-primario-lila);
+    text-decoration: none;
+    border-bottom: 1px solid var(--clr-corporativo-lavanda-low);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.planes-link:hover {
+    color: var(--clr-corporativo-secundario-rosa-claro);
+    border-color: var(--clr-corporativo-secundario-rosa-claro);
+}
+
+/* KIT VISUAL */
+
+.ilustrac-completa-el {
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+}
+
+
+.ilustrac-entrega-lunar {
+    margin-top: -22rem;
+    position: absolute;
+    z-index: 0;
+    opacity: 10%;
+    pointer-events: none;
+}
+
+.ilustrac-entrega-lunar img {
+    width: 100vw;
+}
+
+.png-libro {
+    width: 22rem;
+    height: auto;
+    position: absolute;
+    margin-top: -13rem;
+}
+
+
+/* SECCIÓN 2 */
+.kit-visual {
+    display: flex;
+    align-items: center;
+    padding: 5rem;
+    margin-top: 15rem;
+    background-color: var(--clr-corporativo-fondo-darker);
+}
+
+.kit-info {
+    width: 50%;
+    text-align: left;
+    padding: 5rem 3rem;
+}
+
+.kit-producto-placeholder {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 20px;
+    min-height: 20rem;
+    align-items: center;
+}
+
+.kit-etiqueta {
+    font-size: var(--font-size-label);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-secundario-rosa-claro);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.kit-texto-sorpresa {
+    font-size: var(--font-size-parrafo-subtitulo);
+    font-weight: 500;
+    color: var(--clr-corporativo-primario-lila);
+    max-width: 20rem;
+    line-height: 1.6;
+}
+
+
+
+/* SECCIÓN CALENDARIO LUNAR */
+.calendario-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 7rem 0;
+    align-items: center;
+}
+
+/* este tiene position relative que afecta a luna orbita centro */
+.luna-orbita {
+    position: relative;
+    width: 23rem;
+    height: 23rem;
+    margin: 0 auto;
+}
+
+/* La magia aquí es que LA LUNA NO SE MUEVE SOLA;
+lo que gira es este aro entero. Le aplicamos el motor 'orbita-girar',
+que tarda 20 segundos en dar una vuelta,
+lo hace a velocidad constante (linear) y no se detiene nunca (infinite). */
+/* este tiene position relative que afecta a luna orbita punto */
+.luna-orbita-circulo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    position: relative;
+    animation: orbita-girar 20s linear infinite;
+}
+
+/* Esta es la bolita física de la luna. Está completamente QUIETA y clavada con 'absolute' en el borde superior. Como es hija del círculo de arriba,
+se comporta como un coche pegado a una rueda: cuando la rueda gira,
+la luna es arrastrada por ella,
+creando la ilusión óptica de que está flotando y orbitando por el espacio. */
+.luna-orbita-punto {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--clr-corporativo-primario-lila);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px var(--clr-corporativo-primario-lila);
+}
+
+/* Le ordenamos que en el segundo 0 empiece en 0 grados (posición original) y que al llegar al segundo 20 haya rotado el aro completo hasta los 360 grados. Al ser un círculo perfecto,
+cuando la animación termina y vuelve a empezar desde 0,
+el ojo humano no nota el "salto" y solo ve un bucle continuo,
+fluido y eterno. */
+@keyframes orbita-girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.luna-orbita-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--clr-corporativo-secundario-rosa-claro);
+}
+
+.luna-orbita-centro .proxima-label {
+    font-weight: 300;
+    font-size: var(--font-size-label);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.luna-orbita-centro .proxima-entrega {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 600;
+}
+
+.luna-fecha-exterior {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.luna-fecha-exterior .fecha-label {
+    font-size: var(--font-size-label);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--clr-corporativo-primario-lila);
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.luna-fecha-exterior .fecha-valor {
+    font-size: var(--font-size-h3-esc);
+    font-weight: 700;
+    color: var(--clr-corporativo-primario-lila);
+}
+
+.calendario-texto h2 {
+    font-size: var(--font-size-h2-principal-esc);
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    text-shadow:
+        0 0 30px var(--clr-corporativo-lavanda-low);
+}
+
+.calendario-texto h2 span {
+    color: var(--clr-corporativo-secundario-rosa-medio);
+}
+
+.calendario-texto p {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 100;
+    line-height: 1.8;
+    color: var(--clr-corporativo-primario-lila);
+    margin-bottom: 1.4rem;
+    max-width: 70%;
+}
+
+/* COMPROMISO */
+.compromiso-section {
+    margin: 2rem 3rem 4rem 3rem;
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 20px;
+    background: var(--clr-corporativo-fondo-darker);
+    padding: 3.5rem 4rem;
+}
+
+.compromiso-section h2 {
+    font-size: var(--font-size-h2-principal-esc);
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    text-shadow:
+            0 0 30px var(--clr-corporativo-lavanda-low);
+}
+
+.compromiso-section h2 span {
+    color: var(--clr-corporativo-secundario-rosa-claro);
+}
+
+.compromiso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+}
+
+.comp-columna-titulo {
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 700;
+    color: var(--clr-corporativo-primario-lila);
+    margin-bottom: 1.5rem;
+}
+
+.comp-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.comp-lista li {
+    font-size: var(--font-size-parrafo);
+    font-weight: 300;
+    color: var(--clr-corporativo-primario-lila);
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.comp-lista li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--clr-corporativo-secundario-rosa-claro);
+    font-weight: 700;
+}
+
+.comp-lista li strong {
+    color: var(--clr-corporativo-secundario-rosa-medio);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .entrega-banner {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: var(--font-size-h1-principal-mobile);
+        padding: 2rem 1.5rem 0 1.5rem;
+        letter-spacing: 0.15rem;
+        text-align: center;
+    }
+
+    .entrega-banner-texto p {
+        max-width: 100%;
+        text-align: center;
+        font-size: var(--font-size-parrafo-mobile);
+    }
+
+    .entrega-banner-lateral {
+        align-items: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .ilustrac-entrega-lunar {
+        margin-top: -10rem;
+    }
+
+    .png-libro {
+        position: relative;
+        margin: 2rem auto 0 auto;
+        display: block;
+        width: 15rem;
+    }
+
+    .kit-visual {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        margin-top: 5rem;
+        gap: 2.5rem;
+    }
+
+    .kit-info {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .kit-texto-sorpresa {
+        max-width: 100%;
+    }
+
+    .kit-producto-placeholder {
+        width: 100%;
+        min-height: 15rem;
+    }
+
+    .calendario-section {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 4rem;
+    }
+
+    .luna-orbita {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .calendario-texto {
+        text-align: center;
+    }
+
+    .calendario-texto h2 {
+        font-size: var(--font-size-h2-mobile);
+    }
+
+    .calendario-texto p {
+        max-width: 100%;
+    }
+
+    .compromiso-section {
+        margin: 2rem 1rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .compromiso-section h2 {
+        font-size: calc(var(--font-size-h2-principal-esc) * 0.75);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .compromiso-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .comp-columna-titulo {
+        text-align: center;
+    }
+}
+
+
+
+
+
