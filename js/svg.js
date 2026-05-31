@@ -58,7 +58,7 @@ function animarViento(vientoSvg) {
                     const colorToUse = attrFill || fillColor || '#c6b6da';
                     shape.style.fill = 'transparent';
                     shape.style.stroke = colorToUse;
-                    shape.style.strokeWidth = '0.2px';
+                    shape.style.strokeWidth = '0.4px';
                 }
             } catch (e) { }
         });
