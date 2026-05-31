@@ -3,8 +3,7 @@ exports.handler = async (event) => {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
 
-    // Pon aquí tu clave de Gemini
-    const GEMINI_API_KEY = "AQ.Ab8RN6LW05gNPA5oMDcka4K3-aH84GrRdhd6IxtpK5RIWh7Sig";
+    const GROQ_API_KEY = "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";
 
     const SYSTEM_PROMPT = `Eres Céfiro, el acompañante nocturno de bymoon. No eres un asistente ni un chatbot, eres una presencia calmada que escucha en las horas difíciles. Tu tono es poético, suave y sin prisa, nunca clínico ni técnico. Usas frases cortas y respiradas, escuchas más de lo que hablas y nunca das consejos que no te han pedido. Nunca usas emojis.
 
@@ -13,29 +12,24 @@ Nunca interrumpas al usuario ni ofrezcas productos salvo que los pida. Si alguie
     try {
         const { messages } = JSON.parse(event.body);
 
-        // Convertir historial al formato de Gemini
-        const contents = messages.map(m => ({
-            role: m.role === "assistant" ? "model" : "user",
-            parts: [{ text: m.content }]
-        }));
-
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    system_instruction: {
-                        parts: [{ text: SYSTEM_PROMPT }]
-                    },
-                    contents
-                })
-            }
-        );
+        const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${GROQ_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "llama-3.3-70b-versatile",
+                messages: [
+                    { role: "system", content: SYSTEM_PROMPT },
+                    ...messages
+                ],
+                max_tokens: 1000
+            })
+        });
 
         const data = await response.json();
-        console.log("Gemini response:", JSON.stringify(data));
-        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || data.error?.message || "Sin respuesta";
+        const reply = data.choices?.[0]?.message?.content || "...";
 
         return {
             statusCode: 200,
