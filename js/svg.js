@@ -14,13 +14,11 @@ async function inlineSvg(host) {
 }
 
 function getFillColor(svg) {
-    // Intenta leer el fill del <style> interno del SVG
     const styleEl = svg.querySelector('style');
     if (styleEl) {
         const match = styleEl.textContent.match(/fill\s*:\s*([^;]+)/);
         if (match) return match[1].trim();
     }
-    // Fallback: lee el atributo fill del primer path
     const firstPath = svg.querySelector('path, polygon, circle');
     if (firstPath) {
         return firstPath.getAttribute('fill') || null;
@@ -31,7 +29,6 @@ function getFillColor(svg) {
 function animarViento(vientoSvg) {
     if (!vientoSvg) return;
 
-    // Pequeño delay para que Safari aplique los estilos del SVG
     setTimeout(() => {
         const shapes = vientoSvg.querySelectorAll('path, line, polyline');
         if (!shapes.length) {
@@ -39,7 +36,6 @@ function animarViento(vientoSvg) {
             return;
         }
 
-        // Leer el color real del SVG antes de tocarlo
         const fillColor = getFillColor(vientoSvg);
 
         shapes.forEach((shape) => {
@@ -60,7 +56,6 @@ function animarViento(vientoSvg) {
 
                 if (!hasStroke && attrFill !== 'none') {
                     const colorToUse = attrFill || fillColor || '#c6b6da';
-                    shape.dataset.originalFill = colorToUse;
                     shape.style.fill = 'transparent';
                     shape.style.stroke = colorToUse;
                     shape.style.strokeWidth = '0.2px';
@@ -82,14 +77,6 @@ function animarViento(vientoSvg) {
                                     shape.style.strokeDashoffset = '0';
                                 }
                             } catch (e) { }
-
-                            if (shape.dataset.originalFill) {
-                                const delay = 600 + i * 40;
-                                setTimeout(() => {
-                                    shape.style.transition = 'fill 0.3s ease';
-                                    shape.style.fill = shape.dataset.originalFill;
-                                }, delay);
-                            }
                         });
                     }
                 });
