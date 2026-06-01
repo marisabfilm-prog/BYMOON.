@@ -387,7 +387,7 @@
 
         async function callClaude(userMsg) {
             history.push({ role: "user", content: userMsg });
-            const res = await fetch("/.netlify/functions/cefiro", {
+            const res = await fetch("/api/cefiro", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ messages: history })
