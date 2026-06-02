@@ -1,37 +1,72 @@
-/* BOTONES */
+/* ─────────────────────────────────────────
+   BOTONES — BYMOON
+   Unidades: rem (salvo border y border-radius en px)
+   ───────────────────────────────────────── */
 
-/* BOTÓN GUARDAR CAMBIOS */
-.btn-guardar-cambios {
-    background-color: transparent;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
+/* BASE COMPARTIDA
+   Muchos botones comparten estructura: la recogemos aquí
+   para no repetirla. Aplícala con varias clases si quieres,
+   o úsala solo como referencia visual. */
+
+/* ── CTA (botón principal de llamada a la acción) ── */
+.cta {
+    display: inline-block;
+    padding: 1rem 4rem;
+    margin-top: 1rem;
+    background-color: var(--clr-corporativo-lavanda-low);
     color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: var(--font-size-boton-esc);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0.3rem var(--clr-corporativo-lavanda-low);
+    transition: background-color 0.4s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+    background-color: var(--clr-corporativo-secundario-rosa-medio);
+    box-shadow:
+        0 0 0.3rem var(--clr-corporativo-lavanda-low),
+        0 0 1.25rem var(--clr-corporativo-lavanda-low);
+}
+
+
+/* ── GUARDAR CAMBIOS ── */
+.btn-guardar-cambios {
     padding: 0.75rem 2.5rem;
+    background-color: transparent;
+    color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
     border-radius: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     cursor: pointer;
     align-self: center;
-    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 0.3rem var(--clr-corporativo-lavanda-low);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-guardar-cambios:hover {
     background-color: rgba(212, 190, 228, 0.08);
     color: var(--clr-corporativo-blanco);
     border-color: hsla(268, 33%, 78%, 0.6);
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
 }
 
-/* BOTÓN VOLVER */
+
+/* ── VOLVER ── */
 .btn-volver {
+    display: inline-block;
     color: var(--clr-corporativo-secundario-rosa-claro);
-    text-decoration: none;
     font-size: 0.8rem;
     font-weight: 700;
-    display: inline-block;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
@@ -39,151 +74,134 @@
     color: var(--clr-corporativo-blanco);
 }
 
-/* BOTÓN ENVIAR */
+
+/* ── ENVIAR ── */
 .btn-enviar {
+    padding: 0.75rem 1.5rem;
     background-color: var(--clr-corporativo-secundario-rosa-claro);
     color: var(--clr-corporativo-fondo-darker);
     border: none;
-    padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    font-weight: 700;
-    cursor: pointer;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.85rem;
+    font-weight: 700;
     letter-spacing: 0.05rem;
+    cursor: pointer;
+    box-shadow: 0 0 0.6rem hsla(315, 39%, 72%, 0.3);
     transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-    box-shadow: 0 0 10px hsla(315, 39%, 72%, 0.3);
 }
 
 .btn-enviar:hover {
     background-color: var(--clr-corporativo-secundario-rosa-medio);
     transform: translateY(-1px);
-    box-shadow: 0 0 20px hsla(315, 39%, 72%, 0.4);
+    box-shadow: 0 0 1.25rem hsla(315, 39%, 72%, 0.4);
 }
 
 .btn-enviar:active {
     transform: translateY(0);
 }
 
-/* BOTÓN PAGAR */
+
+/* ── PAGAR ── */
 .btn-pagar {
     width: 100%;
     padding: 1rem;
-    border-radius: 50px;
-    border: none;
     background-color: var(--clr-corporativo-primario);
     color: var(--clr-corporativo-blanco);
+    border: none;
+    border-radius: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-parrafo-esc);
     font-weight: 700;
     letter-spacing: 0.08rem;
     cursor: pointer;
+    box-shadow: 0 0 1rem hsla(261, 48%, 21%, 0.3);
     transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-    box-shadow: 0 0 16px hsla(261, 48%, 21%, 0.3);
 }
 
 .btn-pagar:hover {
     background-color: var(--clr-corporativo-primario-rosa-oscuro);
     transform: translateY(-1px);
-    box-shadow: 0 0 24px hsla(261, 48%, 21%, 0.4);
+    box-shadow: 0 0 1.5rem hsla(261, 48%, 21%, 0.4);
 }
 
 .btn-pagar:active {
     transform: translateY(0);
 }
 
-/* BOTÓN SEGUIR */
-.btn-seguir {
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    background-color: transparent;
-    padding: 0.65rem 2.5rem;
-    border-radius: 20px;
-    color: var(--clr-corporativo-primario-lila);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low);
-    animation: aparecer 0.5s 0.2s ease both;
-}
 
-.btn-seguir:hover {
-    background-color: rgba(212, 190, 228, 0.08);
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
-    color: var(--clr-corporativo-blanco);
-    border-color: hsla(268, 33%, 78%, 0.6);
-}
-
-/* BOTÓN EDITAR */
+/* ── SEGUIR / EDITAR (misma estructura, distinto nombre) ── */
+.btn-seguir,
 .btn-editar {
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    background-color: transparent;
     padding: 0.65rem 2.5rem;
-    border-radius: 20px;
+    background-color: transparent;
     color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 20px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: var(--font-size-label);
     font-weight: 700;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     cursor: pointer;
-    transition: box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 0.3rem var(--clr-corporativo-lavanda-low);
     animation: aparecer 0.5s 0.2s ease both;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.btn-seguir:hover,
 .btn-editar:hover {
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
+    background-color: rgba(212, 190, 228, 0.08);
     color: var(--clr-corporativo-blanco);
     border-color: hsla(268, 33%, 78%, 0.6);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
 }
 
-/* BOTÓN SABER MÁS */
+
+/* ── SABER MÁS ── */
 .btn-saber-mas {
     display: block;
     margin: 0 auto;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    background-color: transparent;
     padding: 0.45rem 1.8rem;
-    border-radius: 20px;
+    background-color: transparent;
     color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 20px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.82rem;
     font-weight: 400;
     cursor: pointer;
-    transition: box-shadow 0.2s ease, color 0.2s ease;
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 0.3rem var(--clr-corporativo-lavanda-low);
+    transition: color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-saber-mas:hover {
-    box-shadow: 0 0 16px var(--clr-corporativo-lavanda-low);
     color: var(--clr-corporativo-blanco);
+    box-shadow: 0 0 1rem var(--clr-corporativo-lavanda-low);
 }
 
-/* BOTÓN MEJORAR */
+
+/* ── MEJORAR ── */
 .btn-mejorar {
     width: 100%;
     padding: 0.9rem;
+    margin-top: 0.5rem;
     background-color: var(--clr-corporativo-secundario-rosa-claro);
+    color: var(--clr-corporativo-fondo-darker);
     border: none;
     border-radius: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--clr-corporativo-fondo-darker);
     cursor: pointer;
+    box-shadow: 0 0 1rem hsla(315, 39%, 72%, 0.3);
     transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-    box-shadow: 0 0 16px hsla(315, 39%, 72%, 0.3);
-    margin-top: 0.5rem;
 }
 
 .btn-mejorar:hover {
     background-color: var(--clr-corporativo-secundario-rosa-medio);
     transform: translateY(-1px);
-    box-shadow: 0 0 28px hsla(315, 39%, 72%, 0.45);
+    box-shadow: 0 0 1.75rem hsla(315, 39%, 72%, 0.45);
 }
 
 .btn-mejorar:active {
@@ -191,41 +209,17 @@
 }
 
 
-/* BOTÓN CTA */
-.cta {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 1rem 4rem;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--clr-corporativo-primario-lila);
-    font-size: var(--font-size-boton-esc);
-    background-color: var(--clr-corporativo-lavanda-low);
-    text-decoration: none;
-    transition: box-shadow 0.2s ease-in-out, background-color 0.4s ease-in-out;
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low);
-}
-
-.cta:hover {
-    background-color: var(--clr-corporativo-secundario-rosa-medio);
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low),
-        0 0 20px var(--clr-corporativo-lavanda-low);
-}
-
-/* BOTÓN CANCELAR */
+/* ── CANCELAR ── */
 .btn-cancelar {
-    font-size: 0.72rem;
-    color: var(--clr-corporativo-primario-lila);
-    opacity: 0.38;
     background-color: transparent;
+    color: var(--clr-corporativo-primario-lila);
     border: none;
-    cursor: pointer;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.72rem;
     text-decoration: underline;
     text-underline-offset: 3px;
+    opacity: 0.38;
+    cursor: pointer;
     transition: opacity 0.2s ease;
 }
 
@@ -233,18 +227,19 @@
     opacity: 0.75;
 }
 
-/* BOTÓN EMOJI */
+
+/* ── EMOJI ── */
 .btn-emoji {
-    background-color: transparent;
-    border: 1px solid transparent;
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    border-radius: 50%;
-    padding: 7px;
-    filter: grayscale(100%) opacity(0.7);
     width: 3rem;
     height: 3rem;
+    padding: 0.44rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    filter: grayscale(100%) opacity(0.7);
+    transition: transform 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
 }
 
 .btn-emoji:hover {
@@ -253,102 +248,55 @@
     border-color: var(--clr-corporativo-secundario-rosa-claro);
 }
 
-/* BOTÓN RESPIRACIÓN */
+
+/* ── RESPIRACIÓN ── */
 .respiracion-btn {
     position: relative;
     z-index: 2;
     width: 13rem;
     height: 13rem;
-    border-radius: 50%;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--clr-corporativo-fondo-darker);
     color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 50%;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-h1-secundario-esc);
     font-weight: 900;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .respiracion-btn:hover {
     border-color: var(--clr-corporativo-secundario-rosa-claro);
-    box-shadow: 0 0 30px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 2rem var(--clr-corporativo-secundario-rosa-claro);
 }
 
-/* BOTÓN AUDIO */
-.audio-play-btn {
-    margin-top: 0.8rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    background-color: var(--clr-corporativo-fondo-dark);
-    color: var(--clr-corporativo-primario-lila);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-    align-self: flex-start;
-}
 
-.audio-play-btn:hover {
-    border-color: var(--clr-corporativo-secundario-rosa-claro);
-    color: var(--clr-corporativo-secundario-rosa-claro);
-    box-shadow: 0 0 10px var(--clr-corporativo-lavanda-low);
-}
-
-/* CTA CENTRO DE AYUDA */
-.contacto-cta-btn {
-    background-color: transparent;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    border-radius: 50px;
-    padding: 0.9rem 2.5rem;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: var(--font-size-parrafo-esc);
-    font-weight: 600;
-    color: var(--clr-corporativo-primario-lila);
-    letter-spacing: 0.08rem;
-    cursor: pointer;
-    transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
-    margin-bottom: 3rem;
-}
-
-.contacto-cta-btn:hover {
-    border-color: var(--clr-corporativo-secundario-rosa-claro);
-    color: var(--clr-corporativo-secundario-rosa-claro);
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
-    transform: translateY(-1px);
-}
-
-.contacto-cta-btn:active {
-    transform: translateY(0);
-}
-
-/* BOTÓN CONTRASEÑA */
+/* ── CONTRASEÑA ── */
 .contrasena-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
     background-color: transparent;
+    color: var(--clr-corporativo-primario-lila);
     border: 1px solid var(--clr-corporativo-lavanda-low);
     border-radius: 50px;
-    padding: 0.9rem 2.5rem;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-parrafo-esc);
-    font-weight: 600;
-    color: var(--clr-corporativo-primario-lila);
+    font-weight: 700;
     letter-spacing: 0.08rem;
     cursor: pointer;
     transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
-    margin-bottom: 2rem;
 }
 
 .contrasena-btn:hover {
     border-color: var(--clr-corporativo-secundario-rosa-claro);
     color: var(--clr-corporativo-secundario-rosa-claro);
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
     transform: translateY(-1px);
 }
 
@@ -356,7 +304,8 @@
     transform: translateY(0);
 }
 
-/* BOTÓN INICIO SESIÓN */
+
+/* ── INICIO SESIÓN (email) ── */
 .login-btn-email {
     width: 100%;
     padding: 1.1rem;
@@ -369,66 +318,84 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-parrafo-esc);
     font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-    box-shadow: 0 0 12px hsla(315, 39%, 72%, 0.25);
     letter-spacing: 0.08rem;
+    cursor: pointer;
+    box-shadow: 0 0 0.75rem hsla(315, 39%, 72%, 0.25);
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .login-btn-email:hover {
     background-color: var(--clr-corporativo-secundario-rosa-claro);
     transform: translateY(-1px);
-    box-shadow: 0 0 24px hsla(315, 39%, 72%, 0.4);
+    box-shadow: 0 0 1.5rem hsla(315, 39%, 72%, 0.4);
 }
 
 .login-btn-email:active {
     transform: translateY(0);
 }
 
-/* BOTÓN SOCIAL */
+
+/* ── SOCIAL (Google, Apple…) ── */
+.login-social-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
 .login-social-btn {
     width: 6.875rem;
     height: 6.875rem;
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    border-radius: 18px;
-    background-color: var(--clr-corporativo-fondo-darker);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--clr-corporativo-fondo-darker);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 18px;
     cursor: pointer;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease, background-color 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .login-social-btn:hover {
     border-color: var(--clr-corporativo-secundario-rosa-claro);
-    box-shadow: 0 0 20px var(--clr-corporativo-lavanda-low);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
     transform: translateY(-3px);
-    background-color: var(--clr-corporativo-fondo-darker);
 }
 
 .login-social-btn svg {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
+}
+
+.google {
+    width: 2rem;
+    height: auto;
+}
+
+.apple {
+    width: 2rem;
+    height: auto;
 }
 
 @media (max-width: 768px) {
     .login-social-btn {
-        width: 90px;
-        height: 90px;
+        width: 5.625rem;
+        height: 5.625rem;
     }
 }
 
-/* TAB BOTÓN */
+
+/* ── TAB ── */
 .tab-btn {
     flex: 1;
     padding: 1.5rem;
     background-color: transparent;
-    border: none;
     color: var(--clr-corporativo-primario-lila);
+    border: none;
     font-family: inherit;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    font-size: var(--font-size-label);
+    font-weight: 700;
     letter-spacing: 0.1rem;
+    text-transform: uppercase;
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
@@ -436,35 +403,36 @@
 
 .tab-btn.active {
     opacity: 1;
-    background-image: linear-gradient(90deg,
-            rgba(212, 190, 228, 0.1) 0%,
-            rgba(212, 190, 228, 0.3) 50%,
-            rgba(212, 190, 228, 0.1) 100%);
-    box-shadow: inset 0 0 15px rgba(212, 190, 228, 0.1);
     color: var(--clr-corporativo-blanco);
+    background-image: linear-gradient(90deg,
+            hsla(268, 33%, 78%, 0.1) 0%,
+            hsla(268, 33%, 78%, 0.3) 50%,
+            hsla(268, 33%, 78%, 0.1) 100%);
+    box-shadow: inset 0 0 0.94rem hsla(268, 33%, 78%, 0.1);
 }
 
-/* BOTONES PLAN */
+
+/* ── PLAN ── */
 .plan-btn {
     width: 100%;
     padding: 1rem;
+    margin-top: auto;
     background-color: var(--clr-corporativo-primario-rosa-oscuro);
+    color: var(--clr-corporativo-secundario-rosa-claro);
     border: none;
     border-radius: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-parrafo-esc);
     font-weight: 900;
-    color: var(--clr-corporativo-secundario-rosa-claro);
-    cursor: pointer;
     letter-spacing: 0.08rem;
+    cursor: pointer;
     transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
-    margin-top: auto;
 }
 
 .plan-btn:hover {
     background-color: var(--clr-corporativo-secundario-rosa-claro);
     color: var(--clr-corporativo-fondo-darker);
-    box-shadow: 0 0 24px hsla(315, 39%, 72%, 0.35);
+    box-shadow: 0 0 1.5rem hsla(315, 39%, 72%, 0.35);
     transform: translateY(-1px);
 }
 
@@ -482,109 +450,18 @@
     border-color: var(--clr-corporativo-secundario-rosa-claro);
 }
 
-/* BOTÓN ACOMPAÑAMIENTO */
-.acomp-btn {
-    border: 1px solid var(--clr-corporativo-lavanda-low);
-    padding: 0.4rem 1rem 0.4rem 1rem;
-    border-radius: 20px;
-    transition: box-shadow 0.1s ease-in-out, background-color 0.4s ease-in-out;
-    box-shadow: 0 0 5px rgba(122, 111, 157, 0.4);
-    background: var(--clr-corporativo-lavanda-low);
-    margin-top: 1.1rem;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--clr-corporativo-primario-lila);
-    cursor: pointer;
-    align-self: flex-start;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
-}
 
-.acomp-btn p {
-    margin: 0;
-}
-
-.acomp-btn:hover {
-    background-color: var(--clr-corporativo-primario);
-    box-shadow: 0 0 5px var(--clr-corporativo-lavanda-low),
-        0 0 20px var(--clr-corporativo-lavanda-low);
-    color: var(--clr-corporativo-blanco);
-}
-
-.guia-nocturna-home .acomp-btn {
-    background-color: var(--clr-corporativo-secundario-rosa-claro);
-}
-
-.guia-nocturna-home .acomp-btn p {
-    color: var(--clr-corporativo-primario-rosa-oscuro);
-    font-weight: 700;
-}
-
-/* BOTÓN ÚNETE */
-.unete-btn {
-    background-color: var(--clr-corporativo-primario-lila);
-    color: var(--clr-corporativo-primario);
-    border: none;
-    border-radius: 50px;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
-    box-shadow: 0 0 10px hsla(315, 39%, 72%, 0.3);
-    font-family: inherit;
-}
-
-.unete-btn:hover {
-    background-color: var(--clr-corporativo-secundario-rosa-medio);
-    transform: translateY(-0.5px);
-    color: var(--clr-corporativo-primario-lila);
-}
-
-.unete-btn:active {
-    transform: translateY(0);
-}
-
-/* BOTÓN CONFIRMAR */
-.conf-btn {
-    padding: 0.95rem 3rem;
-    border-radius: 50px;
-    border: none;
-    background: var(--clr-corporativo-secundario-rosa-claro);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: var(--font-size-parrafo-esc);
-    font-weight: 700;
-    color: var(--clr-corporativo-fondo-darker);
-    letter-spacing: 0.05rem;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 320px;
-    box-shadow: 0 4px 20px hsla(315, 39%, 72%, 0.3);
-    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
-}
-
-.conf-btn:hover {
-    background-color: var(--clr-corporativo-secundario-rosa-medio);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 28px hsla(315, 39%, 72%, 0.4);
-}
-
-.conf-btn:active {
-    transform: translateY(0);
-}
-
-/* BOTÓN MODALIDAD */
+/* ── MODALIDAD ── */
 .plan-modalidad-btn {
     margin-top: 0.8rem;
     padding: 0.75rem 1.8rem;
-    border-radius: 50px;
+    background-color: var(--clr-corporativo-secundario-melocoton);
+    color: var(--clr-corporativo-primario);
     border: 1px solid var(--clr-corporativo-lavanda-low);
-    background: var(--clr-corporativo-secundario-melocoton);
+    border-radius: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--font-size-parrafo-esc);
     font-weight: 700;
-    color: var(--clr-corporativo-primario);
     letter-spacing: 0.05rem;
     cursor: pointer;
     transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
@@ -607,19 +484,98 @@
     border-color: var(--clr-corporativo-primario-rosa-oscuro);
 }
 
-/* ── BOTONES SOCIALES ── */
-.login-social-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+
+/* ── ACOMPAÑAMIENTO ── */
+.acomp-btn {
+    align-self: flex-start;
+    margin-top: 1.1rem;
+    padding: 0.4rem 1rem;
+    background-color: var(--clr-corporativo-lavanda-low);
+    color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    box-shadow: 0 0 0.3rem hsla(122, 111, 157, 0.4);
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.1s ease;
 }
 
-.google {
-    width: 2rem;
-    height: auto;
+.acomp-btn p {
+    margin: 0;
 }
 
-.apple {
-    width: 2rem;
-    height: auto;
+.acomp-btn:hover {
+    background-color: var(--clr-corporativo-primario);
+    color: var(--clr-corporativo-blanco);
+    box-shadow:
+        0 0 0.3rem var(--clr-corporativo-lavanda-low),
+        0 0 1.25rem var(--clr-corporativo-lavanda-low);
+}
+
+.guia-nocturna-home .acomp-btn {
+    background-color: var(--clr-corporativo-secundario-rosa-claro);
+}
+
+.guia-nocturna-home .acomp-btn p {
+    color: var(--clr-corporativo-primario-rosa-oscuro);
+    font-weight: 700;
+}
+
+
+/* ── ÚNETE ── */
+.unete-btn {
+    padding: 1rem;
+    background-color: var(--clr-corporativo-primario-lila);
+    color: var(--clr-corporativo-primario);
+    border: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 0.625rem hsla(315, 39%, 72%, 0.3);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.unete-btn:hover {
+    background-color: var(--clr-corporativo-secundario-rosa-medio);
+    color: var(--clr-corporativo-primario-lila);
+    transform: translateY(-0.5px);
+}
+
+.unete-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ── CONFIRMAR ── */
+.conf-btn {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.95rem 3rem;
+    margin-bottom: 2rem;
+    background-color: var(--clr-corporativo-secundario-rosa-claro);
+    color: var(--clr-corporativo-fondo-darker);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 1.25rem hsla(315, 39%, 72%, 0.3);
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+.conf-btn:hover {
+    background-color: var(--clr-corporativo-secundario-rosa-medio);
+    transform: translateY(-2px);
+    box-shadow: 0 0.375rem 1.75rem hsla(315, 39%, 72%, 0.4);
+}
+
+.conf-btn:active {
+    transform: translateY(0);
 }

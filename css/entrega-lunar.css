@@ -95,7 +95,7 @@ h1 span {
     width: 22rem;
     height: auto;
     position: absolute;
-    margin-top: -13rem;
+    margin: -13rem auto 0 33rem;
 }
 
 
@@ -286,7 +286,7 @@ fluido y eterno. */
     text-transform: uppercase;
     margin-bottom: 3rem;
     text-shadow:
-            0 0 30px var(--clr-corporativo-lavanda-low);
+        0 0 30px var(--clr-corporativo-lavanda-low);
 }
 
 .compromiso-section h2 span {
@@ -346,6 +346,10 @@ fluido y eterno. */
         font-size: var(--font-size-h1-principal-mobile);
         padding: 2rem 1.5rem 0 1.5rem;
         letter-spacing: 0.15rem;
+        text-align: center;
+    }
+
+    .entrega-banner-texto {
         text-align: center;
     }
 
@@ -437,8 +441,3 @@ fluido y eterno. */
         text-align: center;
     }
 }
-
-
-
-
-

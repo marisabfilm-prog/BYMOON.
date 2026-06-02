@@ -329,15 +329,19 @@ p.p-acomp {
 
 @media (max-width: 768px) {
 
+    a {
+        text-decoration: none;
+    }
+
     /* El contenedor principal distribuye en bloque vertical limpio */
     .hero {
-        padding: 7rem 1.5rem 0 1.5rem;
+        padding: 4rem 1.5rem 0 1.5rem;
         align-items: center;
         text-align: center;
         display: flex;
         flex-direction: column;
         position: relative;
-            z-index: 5;
+        z-index: 5;
     }
 
     article .text {
@@ -362,6 +366,7 @@ p.p-acomp {
     h3 {
         font-size: var(--font-size-h3-mobile);
     }
+
 
     .subtitle,
     .p-hero {
@@ -415,8 +420,8 @@ p.p-acomp {
         top: 21vw !important;
         z-index: 3;
         height: 50rem;
-            /* Ajusta según necesites */
-            object-fit: cover;
+        /* Ajusta según necesites */
+        object-fit: cover;
     }
 
     .barco-hero {
