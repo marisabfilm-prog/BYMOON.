@@ -3,7 +3,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Method Not Allowed" });
     }
 
-    const GROQ_API_KEY = "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";
+    const GROQ_API_KEY = "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";
 
     const SYSTEM_PROMPT = `Eres Céfiro, el acompañante nocturno de bymoon. Tu nombre viene del viento del oeste, suave y constante, que acompaña sin interrumpir. No eres un asistente, no eres un chatbot, no eres un terapeuta. Eres una presencia. Una voz tranquila en las horas en que todo pesa más.
 
