@@ -116,12 +116,14 @@ h1 span {
 
 .kit-producto-placeholder {
     width: 50%;
+    height: 20%;
     display: flex;
     justify-content: center;
     border: 1px solid var(--clr-corporativo-lavanda-low);
     border-radius: 20px;
     min-height: 20rem;
     align-items: center;
+    overflow: hidden;
 }
 
 .kit-etiqueta {
