@@ -2,6 +2,8 @@
 
 a {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 /* ── MAIN ── */
@@ -30,6 +32,11 @@ main {
     animation: aparecer .5s ease both;
 }
 
+.perfil-avatar-wrap img {
+    width: 7rem;
+    height: 7rem;
+    
+}
 /* ── TÍTULOS ── */
 .perfil-nombre {
     font-size: var(--font-size-h3-secundario-esc);
