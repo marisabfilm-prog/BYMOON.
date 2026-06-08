@@ -202,8 +202,8 @@ p.p-acomp {
     position: absolute;
     max-width: 17rem;
     text-align: right;
-    top: 267vh;
-    left: 15vw;
+    top: 135rem;
+    left: 20rem;
 }
 
 .guia-texto span {
@@ -282,21 +282,13 @@ p.p-acomp {
 /* RESPONSIVE */
 
 /* Tablet (≤ 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .hero {
         padding: 2rem 2rem 8rem 2rem;
     }
 
-    h1 {
-        font-size: var(--font-size-h1-principal-esc);
-    }
-
     p {
         max-width: 55vw;
-    }
-
-    .ilustr-hero {
-        margin-top: 3rem;
     }
 
     .acomp-card {
@@ -307,13 +299,24 @@ p.p-acomp {
         padding: 0 2rem;
     }
 
+    /* ESTO ES EL FIX PRINCIPAL */
     .guia-texto {
-        left: 5vw;
-        max-width: 14rem;
+        position: static;
+        text-align: right;
+        max-width: 17rem;
+        margin-bottom: 2rem;
+    }
+
+    .guia-nocturna-home .guia-centro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
     }
 
     .viento-oeste {
         width: 30rem;
+        margin-right: 0;
     }
 
     .unete {
@@ -325,7 +328,6 @@ p.p-acomp {
         max-width: 50vw;
     }
 }
-
 
 @media (max-width: 768px) {
 

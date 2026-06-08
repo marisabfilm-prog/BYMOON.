@@ -3,9 +3,9 @@ async function inlineSvg(host) {
     if (!src) return null;
 
     try {
-        const response = await fetch(src);
+        const response = await fetch(src); // Va a buscar el archivo .svg
         if (!response.ok) throw new Error(`No se pudo cargar ${src}`);
-        host.innerHTML = await response.text();
+        host.innerHTML = await response.text();  // Copia el código del dibujo y lo mete en la página
         return host.querySelector('svg');
     } catch (error) {
         console.error('Error cargando SVG inline:', error);
@@ -41,10 +41,10 @@ function animarViento(vientoSvg) {
         shapes.forEach((shape) => {
             try {
                 if (shape.getTotalLength) {
-                    const len = shape.getTotalLength();
+                    const len = shape.getTotalLength(); // Mide la línea
                     if (len > 0) {
-                        shape.style.strokeDasharray = len;
-                        shape.style.strokeDashoffset = len;
+                        shape.style.strokeDasharray = len;   // Crea una línea de guiones del tamaño total
+                        shape.style.strokeDashoffset = len; // Mueve los guiones para que la línea se vuelva invisible
                         shape.style.transition = 'none';
                     }
                 }
@@ -55,7 +55,7 @@ function animarViento(vientoSvg) {
                 const hasStroke = shape.getAttribute('stroke');
 
                 if (!hasStroke && attrFill !== 'none') {
-                    const colorToUse = attrFill || fillColor || '#c6b6da';
+                    const colorToUse = attrFill || fillColor || '#c6b6da'; // 600 milisegundos después, el dibujo se rellena de color
                     shape.style.fill = 'transparent';
                     shape.style.stroke = colorToUse;
                     shape.style.strokeWidth = '0.4px';
@@ -74,7 +74,8 @@ function animarViento(vientoSvg) {
                             try {
                                 if (shape.getTotalLength && shape.getTotalLength() > 0) {
                                     shape.style.transition = `stroke-dashoffset 0.6s ease ${i * 0.04}s`;
-                                    shape.style.strokeDashoffset = '0';
+                                    shape.style.strokeDashoffset = '0'; // La línea se empieza a dibujar en la pantalla
+
                                 }
                             } catch (e) { }
                         });
