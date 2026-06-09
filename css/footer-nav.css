@@ -33,17 +33,14 @@ a {
     gap: 1.5rem;
 }
 
-/* no se ve en desktop */
-/* Contenedor del botón hamburguesa */
 .menu-toggle {
     display: none;
-    /* Invisible en desktop */
     flex-direction: column;
     gap: 0px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 102;
+    z-index: 10002;
     padding: 0.625rem;
     position: relative;
     width: 2.8125rem;
@@ -52,7 +49,6 @@ a {
     align-items: center;
 }
 
-/* Las tres líneas de la hamburguesa */
 .menu-toggle span {
     width: 1.5625rem;
     height: 0.125rem;
@@ -61,39 +57,28 @@ a {
     position: absolute;
 }
 
-/* Primera línea (arriba) */
 .menu-toggle span:nth-child(1) {
     top: 0.75rem;
 }
 
-/* Segunda línea (centro) */
 .menu-toggle span:nth-child(2) {
     top: 50%;
-    /* Centrada verticalmente */
     transform: translateY(-50%);
-    /* Ajuste para centrar */
 }
 
-/* Tercera línea (abajo) */
 .menu-toggle span:nth-child(3) {
     bottom: 0.75rem;
 }
 
-/* CUANDO ESTÁ ACTIVO (menú abierto) */
-
-/* Primera línea se rota 45° y sube al centro */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translateY(0);
     top: 50%;
 }
 
-/* Segunda línea desaparece */
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
-    /* Invisible pero ocupa espacio */
 }
 
-/* Tercera línea se rota -45° y baja al centro */
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(0);
     bottom: 50%;
@@ -144,6 +129,8 @@ nav .btn:hover {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        z-index: 10001;
     }
 
     .logo {
@@ -158,7 +145,6 @@ nav .btn:hover {
         margin-top: 0.35rem;
     }
 
-    /* MOSTRAR HAMBURGUESA EN MÓVIL */
     .menu-toggle {
         display: flex;
     }
@@ -167,21 +153,21 @@ nav .btn:hover {
         gap: 1rem;
     }
 
-    /* NAV EN MÓVIL - OCULTO POR DEFECTO*/
     nav {
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--clr-corporativo-fondo-dark);
+        width: 100%;
+        min-height: 100dvh;
+        background: var(--clr-corporativo-fondo-darker);
         flex-direction: column;
         gap: 2rem;
         padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
-        z-index: 50;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 10000;
         border: none;
         margin: 0;
         justify-content: center;
@@ -189,7 +175,9 @@ nav .btn:hover {
     }
 
     nav.active {
-        max-height: 100vh;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
         padding: 2rem;
     }
 
@@ -208,10 +196,9 @@ nav .btn:hover {
 /* FOOTER */
 footer {
     background: transparent;
-    padding: 0;
     text-align: left;
     position: relative;
-    padding: 2rem 3rem 2rem 3rem;
+    padding: 2rem 3rem;
     margin-top: -2rem;
 }
 
@@ -276,7 +263,6 @@ footer {
     color: var(--clr-corporativo-lavanda-low);
     letter-spacing: 0.05em;
     max-width: 100%;
-    align-items: flex-end;
     margin-top: 1rem;
     margin-bottom: 0;
 }
