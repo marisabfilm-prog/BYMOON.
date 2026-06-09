@@ -671,6 +671,10 @@ footer {
         gap: 0;
     }
 
+    .campo {
+        margin-top: 1rem;
+    }
+
     /* Campos */
     .campo input,
     .campo textarea {

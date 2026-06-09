@@ -379,7 +379,7 @@ p.p-acomp {
         margin: 0 auto !important;
     }
 
-    /* LA ILUSTRACIÓN: Al no tener absolute general, fuerza su espacio debajo del texto */
+    
     .ilustr-hero {
         order: 2;
         /* 2º: La ilustración se posiciona naturalmente en medio */
@@ -400,7 +400,7 @@ p.p-acomp {
         top: unset !important;
     }
 
-    /* Calibración milimétrica para que encajen perfectas en su horizonte */
+    /* Calibración para que encajen perfectas en el horizonte */
     .luna-hero {
         width: 90% !important;
         bottom: 2vw !important;
