@@ -1,6 +1,4 @@
-/* ==========================================================================
-   HERO SECTION (ESCRITORIO)
-   ========================================================================== */
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -81,9 +79,7 @@ p {
     will-change: transform, opacity;
 }
 
-/* ==========================================================================
-   TARJETAS Y SECCIONES INTERMEDIAS
-   ========================================================================== */
+/* TARJETAS Y SECCIONES INTERMEDIAS */
 .acomp-card {
     border: 1px solid var(--clr-corporativo-lavanda-low);
     border-radius: 20px;
@@ -202,7 +198,7 @@ p.p-acomp {
     position: absolute;
     max-width: 17rem;
     text-align: right;
-    top: 135rem;
+    top: 40rem;
     left: 20rem;
 }
 

@@ -793,20 +793,6 @@
     }
 }
 
-/* ========================================================================== */
-/* ANIMACIONES ENTRADA ── */
-/* ========================================================================== */
-
-.animar {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.animar.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* Retrasos escalonados para las cards de capítulos */
 .capitulo-card:nth-child(1) {

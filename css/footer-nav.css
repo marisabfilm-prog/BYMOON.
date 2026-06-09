@@ -5,6 +5,10 @@ header {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* LOGO */
 .logo {
     width: 10rem;

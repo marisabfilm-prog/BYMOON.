@@ -5,66 +5,95 @@ const nubesHero = document.querySelector('.nubes-hero');
 const lunaHero = document.querySelector('.luna-hero');
 const textElement = document.querySelector('.text');
 const acompSection = document.querySelector('.acomp-section');
+const bannerIlustrac = document.querySelector('.ilustrac-completa-el');
+const bannerLibro = document.querySelector('.png-libro');
+const bannerTexto = document.querySelector('.entrega-banner-texto');
+const bannerLateral = document.querySelector('.entrega-banner-lateral');
+const kitVisual = document.querySelector('.kit-visual');
 
-if (!barcoHero || !aguaHero || !nubesHero || !lunaHero) {
-    console.warn('Elementos del parallax no encontrados');
-} else {
-    window.addEventListener('scroll', function () {
-        const scrolled = window.pageYOffset;
-        
+window.addEventListener('scroll', function () {
+    const scrolled = window.pageYOffset;
+
+    // PARALLAX HERO PRINCIPAL (solo si existen)
+    if (barcoHero && aguaHero && nubesHero && lunaHero) {
         barcoHero.style.transform = `translateY(${scrolled * -0.5}px)`;
         aguaHero.style.transform = `translateY(${scrolled * -0.5}px)`;
         nubesHero.style.transform = `translateY(${scrolled * -0.5}px)`;
         lunaHero.style.transform = `translateY(${scrolled * -0.9}px)`;
+    }
 
-        // Efecto en texto del hero: subir y desvanecer
-        if (textElement) {
-            if (scrolled > 100) {
-                const fadeStart = 100;
-                const fadeEnd = 300;
-                const progress = Math.min(
-                    (scrolled - fadeStart) / (fadeEnd - fadeStart),
-                    1,
-                );
-                textElement.style.opacity = 1 - progress;
-                textElement.style.transform = `translateY(${-progress * 50}px)`;
-            } else {
-                textElement.style.opacity = 1;
-                textElement.style.transform = 'translateY(0px)';
-            }
+    // PARALLAX ENTREGA LUNAR (solo si existen)
+    if (bannerIlustrac && bannerLibro) {
+        bannerIlustrac.style.transform = `translateY(${scrolled * -0.5}px)`;
+        bannerLibro.style.transform = `translateY(${scrolled * -0.5}px)`;
+    }
+
+    // TEXTO QUE DESAPARECE (hero principal)
+    if (textElement) {
+        if (scrolled > 100) {
+            const fadeStart = 100;
+            const fadeEnd = 300;
+            const progress = Math.min((scrolled - fadeStart) / (fadeEnd - fadeStart), 1);
+            textElement.style.opacity = 1 - progress;
+            textElement.style.transform = `translateY(${-progress * 50}px)`;
+        } else {
+            textElement.style.opacity = 1;
+            textElement.style.transform = 'translateY(0px)';
         }
+    }
 
-        // Desvanecer SVGs después de cierto scroll
-        const svgs = document.querySelectorAll(
-            '.barco-hero, .agua-hero, .nubes-hero, .luna-hero',
-        );
+    // SVGs QUE SE DESVANECEN
+    const svgs = document.querySelectorAll(
+        '.barco-hero, .agua-hero, .nubes-hero, .luna-hero, .ilustrac-completa-el, .png-libro'
+    );
+    if (svgs.length > 0) {
         if (scrolled > 300) {
             const fadeStart = 300;
             const fadeEnd = 550;
-            const progress = Math.min(
-                (scrolled - fadeStart) / (fadeEnd - fadeStart),
-                1,
-            );
-            svgs.forEach((svg) => {
-                svg.style.opacity = 1 - progress;
-            });
+            const progress = Math.min((scrolled - fadeStart) / (fadeEnd - fadeStart), 1);
+            svgs.forEach(svg => svg.style.opacity = 1 - progress);
         } else {
-            svgs.forEach((svg) => {
-                svg.style.opacity = 1;
-            });
+            svgs.forEach(svg => svg.style.opacity = 1);
         }
+    }
 
-        if (acompSection) {
-            if (scrolled > 250) {
-                acompSection.classList.add('visible');
-            } else {
-                acompSection.classList.remove('visible');
-            }
+    // TEXTO BANNER QUE SE DESVANECE
+    if (bannerTexto && bannerLateral) {
+        if (scrolled > 300) {
+            const fadeStart = 300;
+            const fadeEnd = 550;
+            const progress = Math.min((scrolled - fadeStart) / (fadeEnd - fadeStart), 1);
+            bannerTexto.style.opacity = 1 - progress;
+            bannerLateral.style.opacity = 1 - progress;
+        } else {
+            bannerTexto.style.opacity = 1;
+            bannerLateral.style.opacity = 1;
         }
-    });
-}
+    }
 
+    // KIT VISUAL QUE APARECE MIENTRAS EL BANNER SE VA
+    if (kitVisual) {
+        if (scrolled > 300) {
+            const fadeStart = 300;
+            const fadeEnd = 550;
+            const progress = Math.min((scrolled - fadeStart) / (fadeEnd - fadeStart), 1);
+            kitVisual.style.opacity = progress;
+            kitVisual.style.transform = `translateY(${(1 - progress) * 40}px)`;
+        } else {
+            kitVisual.style.opacity = 0;
+            kitVisual.style.transform = 'translateY(40px)';
+        }
+    }
 
+    // SECCIÓN ACOMPAÑAMIENTO
+    if (acompSection) {
+        if (scrolled > 250) {
+            acompSection.classList.add('visible');
+        } else {
+            acompSection.classList.remove('visible');
+        }
+    }
+});
 //Qué hace: Crea efecto de profundidad mientras scrolleas (objetos se mueven a diferentes velocidades)
 
 //Elementos que se mueven:

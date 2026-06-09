@@ -26,13 +26,13 @@
         <div class="estrellas-3"></div>
 
         <!-- AVATAR + PERFIL -->
-        <div class="perfil-avatar-wrap">
+        <div class="perfil-avatar-wrap animar">
             <img src="/png/perfil-mujer.png" alt="Foto Perfil">
         </div>
 
         <h1 class="perfil-nombre">@porsinovuelves</h1>
 
-        <dl class="perfil-stats">
+        <dl class="perfil-stats animar">
             <div class="stat">
                 <dt>Seguidores</dt>
                 <dd>1.456</dd>
@@ -59,7 +59,7 @@
 
 
 
-        <div class="grafico-row">
+        <div class="grafico-row animar">
             <div class="grafico-visual">
                 <div class="anillo-actividad">
                     <span class="dato-izq">75%</span>
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-dark card-actividad-detallada">
+        <div class="card-dark card-actividad-detallada animar">
             <div class="sentimiento-container">
                 <p class="pregunta-sentimiento">¿CÓMO TE SIENTES HOY?</p>
                 <div class="sentimiento-iconos">
@@ -121,16 +121,18 @@
 
         <!-- GRID HILOS -->
         <div id="grid-contenido" class="grid-hilos">
-            <div class="hilo-card hilo-propio" style="background-image: url('../../../jpg/hilo1.jpg');">
+            <div class="hilo-card hilo-propio">
+
                 <div class="hilo-overlay">
                     <p>La luna sabe de mis secretos</p>
                 </div>
+
             </div>
             <div class="hilo-card hilo-ajeno">
                 <p class="hilo-autor">HILO de @porsinovuelves</p>
                 <p class="hilo-cita">Dormir es el arte de soltar todo lo que no puedes controlar hasta mañana.</p>
             </div>
-            <div class="hilo-card hilo-propio" style="background-image: url('../../../jpg/hilo2.jpg');">
+            <div class="hilo-card hilo-propio">
                 <div class="hilo-overlay">
                     <p>Lo que pasa si no te duermes</p>
                 </div>
@@ -139,9 +141,11 @@
 
     </main>
 
-    <script src="../../../js/mi-actividad-nocturna.js"></script>
-    <script src="../../../js/nav.js"></script>
-    <script src="../../../js/utils/main.js"></script>
+    <script src="/js/utils/observer.js"></script>
+    <script src="/js/utils/fade-in.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/mi-actividad-nocturna.js"></script>
+    <script src="/js/utils/main.js"></script>
 </body>
 
 </html>

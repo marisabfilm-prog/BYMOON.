@@ -19,14 +19,14 @@
 
     <header>
         <a href="../../../index.html">
-            <img class="logo" src="../../../svg/logo-bymoon-morado.svg" alt="bymoon." />
+            <img class="logo animar" src="../../../svg/logo-bymoon-morado.svg" alt="bymoon." />
         </a>
     </header>
 
     <main>
 
         <!-- STEPPER -->
-        <div class="stepper">
+        <div class="stepper animar">
             <!-- un stepper es un elemento de diseño de interfaz (en este caso: Una barra de progreso que divide un proceso largo en pasos) -->
             <div class="stepper-linea"></div>
             <div class="stepper-paso">
@@ -43,56 +43,56 @@
             </div>
         </div>
 
-        <h1>Pago</h1>
+        <h1 class="animar">Pago</h1>
 
-        <form class="pago-wrap">
+        <form class="pago-wrap animar">
 
             <fieldset>
                 <legend>Datos de envío</legend>
 
                 <div class="fila">
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
                             autocomplete="given-name" />
                     </div>
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="apellidos">Apellidos</label>
                         <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos"
                             autocomplete="family-name" />
                     </div>
                 </div>
 
-                <div class="campo">
+                <div class="campo animar">
                     <label for="direccion">Dirección</label>
                     <input type="text" id="direccion" name="direccion" placeholder="Calle, número, piso…"
                         autocomplete="street-address" />
                 </div>
 
                 <div class="fila">
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="cp">Código postal</label>
                         <input type="text" id="cp" name="cp" placeholder="28001" inputmode="numeric" maxlength="5" />
                     </div>
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="ciudad">Ciudad</label>
                         <input type="text" id="ciudad" name="ciudad" placeholder="Madrid" />
                     </div>
                 </div>
 
                 <div class="fila">
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="provincia">Provincia</label>
                         <input type="text" id="provincia" name="provincia" placeholder="Madrid" />
                     </div>
-                    <div class="campo">
+                    <div class="campo animar">
                         <label for="telefono">Teléfono</label>
                         <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000"
                             autocomplete="tel" />
                     </div>
                 </div>
 
-                <div class="campo">
+                <div class="campo animar">
                     <label for="info-adicional">Notas adicionales <span class="opcional">(opcional)</span></label>
                     <textarea id="info-adicional" name="info-adicional"
                         placeholder="Instrucciones especiales…"></textarea>
@@ -102,7 +102,7 @@
             <fieldset>
                 <legend>Método de pago</legend>
 
-                <div class="metodos">
+                <div class="metodos animar">
 
                     <label class="metodo activo">
                         <input type="radio" name="metodo-pago" value="tarjeta" checked />
@@ -146,7 +146,7 @@
                 </div>
             </fieldset>
 
-            <div class="terminos">
+            <div class="terminos animar">
                 <input type="checkbox" id="terminos" />
                 <label for="terminos">
                     Al continuar aceptas los <a href="#">Términos de Servicio</a> y la <a href="#">Política de
@@ -162,7 +162,7 @@
                 <button class="btn-pagar" type="button">Pagar y continuar</button>
             </a>
 
-            <div class="notas-seguridad">
+            <div class="notas-seguridad animar">
                 <p>Pago seguro encriptado.</p>
                 <p>No guardamos los datos de tu tarjeta.</p>
                 <p>Se te cobrarán 19,99€ cada mes. Cancela cuando quieras.</p>
@@ -177,6 +177,8 @@
     </footer>
 
     <script src="../../../js/suscripcion-2.js"></script>
+    <script src="/js/utils/observer.js"></script>
+    <script src="/js/utils/fade-in.js"></script>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ if (!btn || !numero || !instruccion || !anillos) {
     });
 }
 
-setupObserver('.animar');
+
 
 
 //EXPLICACIÓN CON MIS PALABRAS

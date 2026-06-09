@@ -29,7 +29,6 @@ main {
     justify-content: center;
     box-shadow: 0 0 20px hsla(315, 39%, 72%, 0.35);
     overflow: hidden;
-    animation: aparecer .5s ease both;
 }
 
 .perfil-avatar-wrap img {
@@ -142,7 +141,6 @@ main {
     border-radius: 20px;
     padding: 1.5rem 2rem;
     transition: border-color .3s, box-shadow .3s;
-    animation: aparecer .5s .35s ease both;
 }
 
 
@@ -840,7 +838,6 @@ main {
 .comentario-card {
     padding: 1.5rem 2rem;
     border-bottom: 1px solid rgba(212, 190, 228, 0.1);
-    animation: aparecer 0.5s ease both;
 }
 
 .comentario-card:last-child {

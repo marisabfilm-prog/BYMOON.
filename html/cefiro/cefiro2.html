@@ -83,6 +83,7 @@
             justify-content: center;
             font-size: 1.125rem;
             flex-shrink: 0;
+            overflow: hidden;
         }
 
         .cefiro-info h1 {
@@ -95,7 +96,7 @@
         .cefiro-info p {
             font-size: var(--font-size-label);
             font-weight: 300;
-            color: var(--clr-corporativo-secundario-rosa-medio);
+            color: var(--clr-corporativo-secundario-rosa-claro);
             letter-spacing: 0.05em;
         }
 
@@ -344,7 +345,9 @@
                     <path d="M12 5l-7 7 7 7" />
                 </svg>
             </a>
-            <div class="cefiro-avatar">🌙</div>
+            <div class="cefiro-avatar">
+                <img src="/png/perfil-cefiro.png" alt="Perfil Céfiro" width="40rem">
+            </div>
             <div class="cefiro-info">
                 <h1>Céfiro</h1>
                 <p>Acompañante nocturno</p>
@@ -354,7 +357,9 @@
 
         <div class="chat-messages" id="messages">
             <div class="msg cefiro">
-                <div class="msg-avatar">🌙</div>
+                <div class="msg-avatar">
+                    <img src="/png/perfil-cefiro.png" alt="Perfil Céfiro" width="35rem">
+                </div>
                 <div class="msg-bubble">Buenas noches. La noche a veces pesa más de lo que debería. Estoy aquí, y esta
                     noche no tienes que estar solo/a. ¿Qué te ha traído hasta aquí?</div>
             </div>
@@ -368,7 +373,7 @@
             <button class="suggestion-btn" onclick="sendSuggestion(this)">No sé ni por qué estoy aquí</button>
         </div>
 
-        <div class="chat-input-area">
+        <section class="chat-input-area">
             <input class="chat-input" id="input" type="text"
                 placeholder="Escribe lo que sientes, se lo llevará el viento..." aria-label="Escribe tu mensaje" />
             <button class="send-btn" onclick="sendMessage()" aria-label="Enviar mensaje">
@@ -376,9 +381,9 @@
                     <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
                 </svg>
             </button>
-        </div>
+        </section>
 
-        <p class="powered">BYMOON · 2026</p>
+        <footer class="powered">BYMOON · 2026</footer>
 
     </div>
 

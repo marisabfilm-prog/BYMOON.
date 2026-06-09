@@ -500,7 +500,7 @@
     letter-spacing: 0.05rem;
     cursor: pointer;
     box-shadow: 0 0 0.3rem hsla(122, 111, 157, 0.4);
-    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.1s ease;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.25s ease-in-out;
 }
 
 .acomp-btn p {
@@ -578,4 +578,27 @@
 
 .conf-btn:active {
     transform: translateY(0);
+}
+
+
+
+.contacto-cta-btn {
+    padding: 0.9rem 2.5rem;
+    background-color: transparent;
+    color: var(--clr-corporativo-primario-lila);
+    border: 1px solid var(--clr-corporativo-lavanda-low);
+    border-radius: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: var(--font-size-parrafo-esc);
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+    box-shadow: 0 0 0.3rem var(--clr-corporativo-lavanda-low);
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contacto-cta-btn:hover {
+    background-color: var(--clr-corporativo-secundario-rosa-medio);
+    color: var(--clr-corporativo-blanco);
+    box-shadow: 0 0 1.25rem var(--clr-corporativo-lavanda-low);
 }
