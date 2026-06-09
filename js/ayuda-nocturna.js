@@ -18,18 +18,20 @@ if (!btn || !numero || !instruccion || !anillos) {
     function iniciarCiclo() {
         let faseActual = 0;
         let segundos = fases[0].duracion;
+
         numero.textContent = segundos;
         instruccion.textContent = fases[0].texto;
 
         intervalo = setInterval(() => {
             segundos--;
-            numero.textContent = segundos;
 
             if (segundos <= 0) {
                 faseActual = (faseActual + 1) % fases.length;
                 segundos = fases[faseActual].duracion;
                 instruccion.textContent = fases[faseActual].texto;
             }
+
+            numero.textContent = segundos;
         }, 1000);
     }
 
@@ -47,8 +49,6 @@ if (!btn || !numero || !instruccion || !anillos) {
         }
     });
 }
-
-
 
 
 //EXPLICACIÓN CON MIS PALABRAS
