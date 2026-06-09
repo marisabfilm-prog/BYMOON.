@@ -24,30 +24,30 @@
     <div class="estrellas-2"></div>
     <div class="estrellas-3"></div>
 
-    <section class="hero">
+    <section class="hero animar">
       <article class="text">
-        <h1 class="luna-de-luz">
+        <h1 class="luna-de-luz animar">
           Luna de luz,<br>luz al <span>desvelo</span>
         </h1>
-        <p class="subtitle">
+        <p class="subtitle animar">
           Acompañamiento nocturno para cuando no puedes dormir
         </p>
-        <p class="p-hero">
+        <p class="p-hero animar">
           Una experiencia que combina contenidos guiados y envíos diseñados
           para ayudarte a descansar mejor.
         </p>
-        <p class="p-hero-mobile">Contenidos guiados y envíos diseñados para ayudarte a descansar mejor.</p>
+        <p class="p-hero-mobile animar">Contenidos guiados y envíos diseñados para ayudarte a descansar mejor.</p>
         <a href="#scroll-home">
         <button class="cta">Explorar el refugio</button>
         </a>
       </article>
     </section>
 
-    <div class="ilustr-hero">
-      <img class="barco-hero w-full" src="svg/barco-hero.svg" alt="" aria-hidden="true" />
-      <img class="agua-hero w-full" src="svg/agua-hero.svg" alt="" aria-hidden="true" />
-      <img class="nubes-hero w-full" src="svg/nubes-hero.svg" alt="" aria-hidden="true" />
-      <img class="luna-hero w-full" src="svg/luna.svg" alt="" aria-hidden="true" />
+    <div class="ilustr-hero animar">
+      <img class="barco-hero w-full" src="svg/barco-hero.svg" alt="Ilustración Barco" aria-hidden="true" />
+      <img class="agua-hero w-full" src="svg/agua-hero.svg" alt="Ilustración Agua" aria-hidden="true" />
+      <img class="nubes-hero w-full" src="svg/nubes-hero.svg" alt="Ilustración Nubes" aria-hidden="true" />
+      <img class="luna-hero w-full" src="svg/luna.svg" alt="Ilustración Luna" aria-hidden="true" />
     </div>
 
     <div class="acomp-card" id="scroll-home">
@@ -60,7 +60,7 @@
         <br />
 
         <div class="acomp-row flex flex-wrap">
-          <article class="inside-acomp-card">
+          <article class="inside-acomp-card animar">
             <div class="inside-acomp-card-contenido">
               <span class="acomp-num">01</span>
               <h3>Ayuda nocturna</h3>
@@ -76,7 +76,7 @@
             </div>
           </article>
 
-          <article class="inside-acomp-card">
+          <article class="inside-acomp-card animar">
             <div class="inside-acomp-card-contenido">
               <span class="acomp-num">02</span>
               <h3>Desvelados</h3>
@@ -92,7 +92,7 @@
             </div>
           </article>
 
-          <article class="inside-acomp-card">
+          <article class="inside-acomp-card animar">
             <div class="inside-acomp-card-contenido">
               <span class="acomp-num">03</span>
               <h3>Entrega lunar</h3>
@@ -111,11 +111,11 @@
       </section>
     </div>
 
-    <section class="guia-nocturna-home">
+    <section class="guia-nocturna-home animar">
       <h2>Una guía <br>en el <span>crepúsculo</span></h2>
 
       <div class="guia-centro">
-        <article class="guia-texto">
+        <article class="guia-texto animar">
           <p class="guia-p">
             Cuéntale lo que estás sintiendo. Se lo llevará el viento.
           </p>
@@ -129,10 +129,10 @@
       </div>
     </section>
 
-    <div class="unete">
+    <section class="unete animar">
       <div>
-        <h1>Ojalá estuviéramos<br><span>durmiendo.</span></h1>
-        <p class="unete-desc">Pero ya que estamos despiertas, recibe nuestras novedades.</p>
+        <h2>Ojalá estuviéramos<br><span>durmiendo.</span></h2>
+        <p class="unete-desc">Pero ya que estamos despiert@s, recibe nuestras novedades.</p>
         <p class="unete-desc">Sin ruido digital. Solo lo que importa.</p>
       </div>
       <div class="unete-form">
@@ -140,13 +140,16 @@
         <input class="unete-input" type="email" placeholder="hola@tuemail.com">
         <button class="unete-btn">+ Únete a la noche</button>
       </div>
-    </div>
+    </section>
   </main>
 
+  <script src="js/utils/observer.js"></script>
+  <script src="js/utils/fade-in.js"></script>
   <script src="js/parallax.js"></script>
   <script src="js/svg.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/utils/main.js"></script>
+  
 </body>
 
 </html>
