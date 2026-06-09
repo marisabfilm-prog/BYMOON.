@@ -8,6 +8,7 @@
     <style>
       .cls-1 {
         fill: #cec5e0;
+        stroke-width:"0.25";
       }
     </style>
   </defs>
