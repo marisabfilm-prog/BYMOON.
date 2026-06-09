@@ -1,55 +1,58 @@
-const btn = document.querySelector('.respiracion-btn');
-const numero = document.querySelector('.respiracion-numero');
-const instruccion = document.querySelector('.respiracion-instruccion');
-const anillos = document.querySelector('.respiracion-anillos');
+document.addEventListener('DOMContentLoaded', () => {
 
-if (!btn || !numero || !instruccion || !anillos) {
-    console.warn('Elementos de respiración no encontrados');
-} else {
-    const fases = [
-        { texto: 'Inhala...', duracion: 4 },
-        { texto: 'Aguanta...', duracion: 4 },
-        { texto: 'Exhala...', duracion: 6 },
-    ];
+    const btn = document.querySelector('.respiracion-btn');
+    const numero = document.querySelector('.respiracion-numero');
+    const instruccion = document.querySelector('.respiracion-instruccion');
+    const anillos = document.querySelector('.respiracion-anillos');
 
-    let activo = false;
-    let intervalo = null;
+    if (!btn || !numero || !instruccion || !anillos) {
+        console.warn('Elementos de respiración no encontrados');
+    } else {
+        const fases = [
+            { texto: 'Inhala...', duracion: 4 },
+            { texto: 'Aguanta...', duracion: 4 },
+            { texto: 'Exhala...', duracion: 6 },
+        ];
 
-    function iniciarCiclo() {
-        let faseActual = 0;
-        let segundos = fases[0].duracion;
+        let activo = false;
+        let intervalo = null;
 
-        numero.textContent = segundos;
-        instruccion.textContent = fases[0].texto;
-
-        intervalo = setInterval(() => {
-            segundos--;
-
-            if (segundos <= 0) {
-                faseActual = (faseActual + 1) % fases.length;
-                segundos = fases[faseActual].duracion;
-                instruccion.textContent = fases[faseActual].texto;
-            }
+        function iniciarCiclo() {
+            let faseActual = 0;
+            let segundos = fases[0].duracion;
 
             numero.textContent = segundos;
-        }, 1000);
+            instruccion.textContent = fases[0].texto;
+
+            intervalo = setInterval(() => {
+                segundos--;
+
+                if (segundos <= 0) {
+                    faseActual = (faseActual + 1) % fases.length;
+                    segundos = fases[faseActual].duracion;
+                    instruccion.textContent = fases[faseActual].texto;
+                }
+
+                numero.textContent = segundos;
+            }, 1000);
+        }
+
+        btn.addEventListener('click', () => {
+            if (!activo) {
+                activo = true;
+                anillos.classList.add('activo');
+                iniciarCiclo();
+            } else {
+                activo = false;
+                clearInterval(intervalo);
+                anillos.classList.remove('activo');
+                instruccion.textContent = 'Pulsa para comenzar';
+                numero.textContent = '3';
+            }
+        });
     }
 
-    btn.addEventListener('click', () => {
-        if (!activo) {
-            activo = true;
-            anillos.classList.add('activo');
-            iniciarCiclo();
-        } else {
-            activo = false;
-            clearInterval(intervalo);
-            anillos.classList.remove('activo');
-            instruccion.textContent = 'Pulsa para comenzar';
-            numero.textContent = '3';
-        }
-    });
-}
-
+});
 
 //EXPLICACIÓN CON MIS PALABRAS
 
